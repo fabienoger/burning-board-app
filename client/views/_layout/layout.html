@@ -8,6 +8,7 @@
 <template name="layout">
   {{> Template.dynamic template=navbar }}
   <main class="ui container-fluid">
+    <div class="message-wrapper" id="message-info"></div>
     {{#unless currentUser}}
       <div class="wrapper-info">
         <div class="ui positive message">

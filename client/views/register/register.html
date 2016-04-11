@@ -1,0 +1,30 @@
+<template name="register">
+  <div class="register">
+    <h2 class="center-align">Inscription</h2>
+    <form id="register-form" action="action" class="ui form">
+      <div id="register-info"></div>
+      <div class="field">
+        <label for="account-email">Email : </label>
+        <input type="email" class="" id="account-email" />
+      </div>
+      <div class="field">
+        <label for="account-password">Password : </label>
+        <input type="password" class="" id="account-password" />
+      </div>
+      <div class="field">
+        <label for="confirm-password">Confirm you're password : </label>
+        <input type="password" class="" id="confirm-password" />
+      </div>
+      <div class="action">
+        <button type="submit" class="ui labeled green icon button">
+          <i class="checkmark icon"></i>
+          Sign up
+        </button>
+        <a href="/login" class="ui right floated labeled red icon button">
+          <i class="sign in icon"></i>
+          Sign in
+        </a>
+      </div>
+    </form>
+  </div>
+</template>
