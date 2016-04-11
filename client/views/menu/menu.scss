@@ -2,6 +2,13 @@
 
 header {
   div.ui.menu {
+    div.item.logo {
+      img {
+        width: 100px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
     a.item {
       .icon {
         float: left !important;
