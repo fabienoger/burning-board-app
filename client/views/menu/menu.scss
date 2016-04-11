@@ -1,0 +1,12 @@
+@import "{}/client/views/_layout/config";
+
+header {
+  div.ui.menu {
+    a.item {
+      .icon {
+        float: left !important;
+        margin-right: 0.5em !important;
+      }
+    }
+  }
+}
