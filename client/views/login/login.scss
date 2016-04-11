@@ -1,0 +1,27 @@
+@import "{}/client/views/_layout/config";
+
+div.login {
+  width: 80%;
+  background-color: #FFF;
+  margin: 0px auto;
+  border-bottom: 5px solid $p-color;
+  padding: 0 0 30px 0;
+
+  h2 {
+    margin: 0;
+    padding: 30px 0 30px 15px;
+    background-color: $p-color;
+    color: #FFF;
+  }
+
+  form#login-form {
+    margin-top: 30px;
+    padding: 0 15px;
+
+    div#login-info {
+      div.card-panel {
+        margin: 30px 0;
+      }
+    }
+  }
+}

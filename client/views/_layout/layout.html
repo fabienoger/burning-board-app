@@ -1,0 +1,28 @@
+<head>
+<!--  <link rel="icon" sizes="16x16 32x32" href="/castle_ico.png"> -->
+  <title>Chat App</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+</head>
+<template name="layout">
+  {{> Template.dynamic template=navbar }}
+  <main class="ui container-fluid">
+    {{#unless currentUser}}
+      <div class="wrapper-info">
+        <div class="ui positive message">
+          <i class="close icon"></i>
+          <div class="header">
+            <i class="icon smile"></i>
+            Welcome to my chat app !
+          </div>
+          <ul class="list">
+            <li>Join us for discover this app ! <a href="/register">Sign Up</a></li>
+            <li>Help me and let your feedback !</li>
+          </ul>
+        </div>
+      </div>
+    {{/unless}}
+    {{> Template.dynamic template=main }}
+  </main>
+</template>

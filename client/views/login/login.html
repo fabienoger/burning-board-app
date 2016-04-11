@@ -1,0 +1,26 @@
+<template name="login">
+  <div class="login">
+    <h2 class="center-align">Sign In</h2>
+    <form id="login-form" action="action" class="ui form">
+      <div id="login-info"></div>
+      <div class="field">
+        <label for="login-email">Email : </label>
+        <input type="email" class="" id="login-email" />
+      </div>
+      <div class="field">
+        <label for="login-password">Password : </label>
+        <input type="password" class="" id="login-password" />
+      </div>
+      <div class="action">
+        <button type="submit" class="ui green labeled icon button">
+          <i class="sign in icon"></i>
+          Sign in
+        </button>
+        <a href="/register" class="ui blue labeled right floated icon button">
+          <i class="add user icon"></i>
+          Sign Up
+        </a>
+      </div>
+    </form>
+  </div>
+</template>
