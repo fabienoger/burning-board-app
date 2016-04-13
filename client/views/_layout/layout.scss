@@ -1,7 +1,20 @@
 @import "config";
-main.ui.container-fluid {
-  margin-top: 50px;
 
+div#__blaze-root {
+  height: 100%;
+}
+
+body {
+  background-image: url("/images/background/stardust.png");
+}
+main.ui.container-fluid {
+  margin-right: 15rem;
+  padding: 0 15px;
+  height: 100%;
+
+  div.message-wrapper {
+    padding: 15px 0;
+  }
 }
 
 // Remove radius for UI items
