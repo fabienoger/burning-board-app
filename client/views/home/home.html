@@ -1,5 +1,7 @@
 <template name="home">
   <div class="home">
-
+    {{#if currentUser}}
+      {{> chat}}
+    {{/if}}
   </div>
 </template>
