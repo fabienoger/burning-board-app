@@ -2,6 +2,8 @@
   <div class="home">
     {{#if currentUser}}
       {{> chat}}
+    {{else}}
+      {{> login}}
     {{/if}}
   </div>
 </template>

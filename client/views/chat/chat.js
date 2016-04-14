@@ -23,8 +23,6 @@ Template.chat.events({
     e.preventDefault();
     var $message = t.find('#message-input');
 
-    console.log($message.value.trim());
-    console.log(new Date());
     // Check if message != null
     if ($message.value.trim()) {
       var message = {
@@ -38,7 +36,6 @@ Template.chat.events({
         if (error) {
           console.log(error);
         } else {
-          console.log(result);
           Modules.client.utils.displayPanel("create-vote-info", "positive", "warning", "The creation of the vote has been recorded.")
         }
         // Empty input
