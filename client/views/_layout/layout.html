@@ -8,11 +8,9 @@
 <template name="layout">
   {{> Template.dynamic template=navbar }}
   <main class="ui container-fluid">
+    <div class="message-wrapper" id="message-info"></div>
     <div class="ui container">
-      <div class="message-wrapper" id="message-info"></div>
-    </div>
-    {{#unless currentUser}}
-      <div class="ui container">
+      {{#unless currentUser}}
         <div class="wrapper-info">
           <div class="ui positive message">
             <i class="close icon"></i>
@@ -26,8 +24,8 @@
             </ul>
           </div>
         </div>
-      </div>
-    {{/unless}}
-    {{> Template.dynamic template=main }}
+      {{/unless}}
+      {{> Template.dynamic template=main }}
+    </div>
   </main>
 </template>

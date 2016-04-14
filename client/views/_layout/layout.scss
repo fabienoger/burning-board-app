@@ -9,11 +9,19 @@ body {
 }
 main.ui.container-fluid {
   margin-left: 15rem;
-  padding: 0 15px;
+  padding: 0;
   height: 100%;
+  position: relative;
 
+  div.ui.container {
+
+  }
   div.message-wrapper {
-    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    div.ui.message {
+      padding: 15px;
+    }
   }
 }
 

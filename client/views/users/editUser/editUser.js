@@ -28,7 +28,7 @@ Template.editUser.events({
 
     // If all fields are continue else return;
     if (!oldPassword.value || !newPassword.value || !confirmPassword.value) {
-      Modules.client.utils.displayPanel("info-password", "negative", "warning", "Tous les champs doivent être remplis.");
+      Modules.client.utils.displayPanel("message-info", "negative", "warning", "Tous les champs doivent être remplis.");
       return;
     }
 
