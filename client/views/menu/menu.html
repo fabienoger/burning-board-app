@@ -1,19 +1,15 @@
 <template name="menu">
   <header>
-    <div class="ui right fixed vertical menu">
-      <div class="item logo">
+    <div class="ui fixed inverted vertical menu">
+      <a href="/" class="item logo">
         <img class="ui circular image" src="/images/burning_keyboard.png">
-      </div>
+      </a>
       <div class="item">
         <div class="ui icon input">
           <input type="text" placeholder="Search">
           <i class="search icon"></i>
         </div>
       </div>
-      <a href="/" class="item" id="home">
-        <i class="home icon"></i>
-        Home
-      </a>
       {{#if currentUser}}
         <a class="item" id="editUser" href="/editUser">
           <i class="icon user"></i>
@@ -24,12 +20,11 @@
             <i class="icon bug"></i>
             FeedBacks
           </a>
-          <a class="ui dropdown item" href="">
+          <a class="ui left pointing dropdown link item" href="">
             <i class="icon users"></i>
-            Users
             <i class="dropdown icon"></i>
+            Users
             <div class="menu">
-              <div class="header">Users</div>
               <a class="item" id="newUser" href="/users/new">
                 <i class="icon user add"></i>
                 New User

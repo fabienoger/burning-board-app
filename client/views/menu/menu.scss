@@ -2,6 +2,7 @@
 
 header {
   div.ui.menu {
+    height: 100%;
     div.bottom {
       position: absolute;
       bottom: 0;
@@ -12,17 +13,29 @@ header {
         text-align: center;
       }
     }
-    div.item.logo {
+    a.item.logo {
       img {
         width: 100px;
         margin-left: auto;
         margin-right: auto;
       }
     }
+    .ui.left.pointing.dropdown.item {
+      div.menu {
+        width: 75%;
+      }
+    }
     a.item {
+      padding-left: 10px;
+      padding-right: 10px;
       .icon {
         float: left !important;
         margin-right: 0.5em !important;
+        margin-left: 0 !important;
+      }
+      .icon.dropdown {
+        float: right !important;
+        margin-right: inherit !important;
       }
     }
   }

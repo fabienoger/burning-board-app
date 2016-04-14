@@ -4,7 +4,8 @@
 
 Template.menu.onRendered(function() {
   // Initialize dropdown menu users
-  $('.ui.dropdown').dropdown();
+  $('.ui.dropdown').dropdown({
+  });
 });
 
 /*********************
