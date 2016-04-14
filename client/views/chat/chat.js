@@ -3,7 +3,13 @@
 ********************/
 
 Template.chat.onRendered(function() {
+  Tracker.autorun(function () {
+    // Auto scroll to bottom on cursor change
+    var messages = Messages.find().fetch();
+    var $someItem = $('#chat-info-bottom');
 
+    $(window).scrollTop($someItem.offset().top);
+  });
 });
 
 
@@ -49,8 +55,12 @@ Template.chat.events({
 ********************/
 
 Template.chat.helpers({
+  // Return the user with the given _id
+  getUser: function(userId) {
+    return Meteor.users.find({_id: userId});
+  },
   // Return messages
   getMessages: function() {
-    return Messages.find().fetch();
+    return Messages.find({}, {limit: 400}).fetch();
   }
 });

@@ -3,11 +3,28 @@
 div.chat {
   div.chat-wrapper {
     margin-bottom: 67px;
+    background-color: #FFF;
     height: 100%;
 
     div.messages {
       height: 100%;
-      padding-bottom: 15px;
+      width: 100%;
+      padding-bottom: 0px;
+
+      div.message.ui.segment {
+        background-color: #FFF;
+        border: none;
+        margin: 0;
+        box-shadow: none;
+
+        div.content {
+          font-size: 1.1em;
+        }
+
+        &:hover {
+          background-color: #EEE;
+        }
+      }
     }
   }
 
@@ -20,6 +37,7 @@ div.chat {
     height: 67px;
     padding-left: 16rem;
     background-color: #FFF;
+    border-top: 2px solid $grey;
 
     form {
       div.ui.input {

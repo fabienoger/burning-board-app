@@ -4,9 +4,13 @@
       <div class="messages">
         {{#each getMessages}}
           <div class="message ui segment">
-            {{ text }}
+            {{ getUser.profile.username }} - {{ messageDate createdAt }}
+            <div class="content">
+              {{ text }}
+            </div>
           </div>
         {{/each}}
+        <div id="chat-info-bottom"></div>
       </div>
     </div>
     <div class="input-wrapper">
