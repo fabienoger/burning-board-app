@@ -13,6 +13,10 @@ Template.menu.onRendered(function() {
 *********************/
 
 Template.menu.events({
+  // Show modal create username
+  'click #create-username': function(e, t) {
+    $('.ui.small.modal.create-username').modal('show');
+  },
   // Logout
   'click #logout' : function(e, tmpl) {
     Meteor.logout(function(error, tmpl) {
