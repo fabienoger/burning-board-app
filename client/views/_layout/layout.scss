@@ -26,6 +26,6 @@ main.ui.container-fluid {
 }
 
 // Remove radius for UI items
-.ui.button, div.card, input, .ui.label, .ui.accordion, .ui.segment, .ui.message, div.menu, textarea, .ui.header {
+.ui.button, div.card, input, .ui.label, .ui.accordion, .ui.segment, .ui.message, div.menu, textarea, .ui.header, .ui.modal {
   border-radius: 0px !important;
 }

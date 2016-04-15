@@ -1,10 +1,20 @@
 <template name="createUserName">
   <div class="create-username ui small modal">
+    <i class="icon close"></i>
+    <div class="header">
+      Create UserName
+    </div>
+    <div class="content">
     <form class="ui form" id="create-username-form">
       <div class="field">
         <label class="ui label" for="username-input">UserName :</label>
         <input type="text" id="username-input" />
       </div>
+      <button type="submit" class="ui button green labeled icon">
+        <i class="icon plus"></i>
+        Add
+      </button>
     </form>
+    </div>
   </div>
 </template>
