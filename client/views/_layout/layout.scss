@@ -17,6 +17,7 @@ main.ui.container-fluid {
 
   }
   div.message-wrapper {
+    z-index: 5;
     position: fixed;
     width: 100%;
     div.ui.message {
