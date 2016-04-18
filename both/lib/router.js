@@ -1,8 +1,8 @@
 FlowRouter.route('/', {
   action: function() {
-    BlazeLayout.render('layout', { main: 'home', navbar: 'menu' });
+    BlazeLayout.render('layout', { main: 'chat', navbar: 'menu' });
   },
-  name: 'home'
+  name: 'chat'
 });
 
 // ##### Users Routes #####
