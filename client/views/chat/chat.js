@@ -9,6 +9,7 @@ Template.chat.onRendered(function() {
     var $someItem = $('#chat-info-bottom');
 
     $(window).scrollTop($someItem.offset().top);
+//    $('div.messages').scrollTop($('div.messages')[0].scrollHeight);
   });
 });
 
