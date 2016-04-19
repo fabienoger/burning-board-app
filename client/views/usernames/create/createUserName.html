@@ -1,5 +1,8 @@
 <template name="createUserName">
   <div class="create-username ui small modal">
+    <i class="icon close"></i>
+    <div class="message-wrapper" id="username-info"></div>
+    {{> listUserNames}}
     {{> contentCreateUserName}}
   </div>
 </template>

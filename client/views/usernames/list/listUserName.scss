@@ -1,0 +1,13 @@
+@import "{}/client/views/_layout/config";
+
+div.list-usernames {
+  margin-bottom: 15px;
+
+  div.ui.label {
+    transition: all .25s;
+    &:hover {
+      background-color: $red;
+      color: #FFF;
+    }
+  }
+}

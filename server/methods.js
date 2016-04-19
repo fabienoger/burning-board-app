@@ -6,5 +6,9 @@ Meteor.methods({
   // Create userName
   createRandomUserName: function(username) {
     return Usernames.insert(username);
+  },
+  // Remove a userName
+  removeUserName: function(id) {
+    return Usernames.remove({_id: id});
   }
 });

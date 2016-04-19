@@ -17,17 +17,19 @@ Template.contentCreateUserName.events({
       Meteor.call("createRandomUserName", userName, function(err, userNameId) {
         if (err) {
           console.error("createRandomUserName() ", err);
-          Modules.client.utils.displayPanel("message-info", "negative", "warning", "Oups ! Something went wrong !");
+          Modules.client.utils.displayPanel("username-info", "negative", "warning", "Oups ! Something went wrong !");
         } else {
-          Modules.client.utils.displayPanel("message-info", "positive", "checkmark", "Username was successfully created !");
+          Modules.client.utils.displayPanel("username-info", "positive", "checkmark", "Username was successfully created !");
           // Close modal
-          $('.create-username.ui.small.modal').modal('hide');
+//          $('.create-username.ui.small.modal').modal('hide');
+          // Empty userNameInput value
+          userNameInput.value = "";
         }
       });
     } else {
-      Modules.client.utils.displayPanel("message-info", "negative", "warning", "Username field is required !");
+      Modules.client.utils.displayPanel("username-info", "negative", "warning", "Username field is required !");
       // Close modal
-      $('.create-username.ui.small.modal').modal('hide');
+//      $('.create-username.ui.small.modal').modal('hide');
     }
   }
 });

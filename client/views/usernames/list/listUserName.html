@@ -1,0 +1,14 @@
+<template name="listUserNames">
+  <div class="list-usernames">
+    <h2 class="ui header">
+      <i class="icon list"></i>
+      UserName List
+    </h2>
+    {{#each getUserNames}}
+      <div class="ui label">
+        {{ userName }}
+        <i data-id={{ _id }} class="remove-username icon close"></i>
+      </div>
+    {{/each}}
+  </div>
+</template>
