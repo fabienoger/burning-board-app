@@ -16,6 +16,7 @@ div.chat {
       bottom: 0;
       top: 0;
       padding-bottom: 0px;
+      overflow-x: hidden;
 
       div.message.ui.segment {
         background-color: #FFF;

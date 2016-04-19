@@ -8,8 +8,15 @@ Template.chat.onRendered(function() {
     var messages = Messages.find().fetch();
     var $someItem = $('#chat-info-bottom');
 
-    $(window).scrollTop($someItem.offset().top);
+    console.log("Scroll");
+//    $(window).scrollTop($someItem.offset().top);
 //    $('div.messages').scrollTop($('div.messages')[0].scrollHeight);
+    var heightMessages = $('div.messages').height();
+    console.log($('div.messages')[0].scrollHeight);
+//    $('div.messages').scrollTop($('div.messages')[0].scrollHeight);
+    $('div.messages').animate({
+        scrollTop: $('#test').css('top')
+    }, heightMessages);
   });
 });
 
@@ -33,11 +40,11 @@ Template.chat.events({
         channelId: null
       }
       // Call insertMessage method
-      Meteor.call("insertMessage", message, function(result, error) {
+      Meteor.call("insertMessage", message, function(error, result) {
         if (error) {
-          console.log(error);
+          console.error("insertMessage", error);
         } else {
-          Modules.client.utils.displayPanel("create-vote-info", "positive", "warning", "The creation of the vote has been recorded.")
+          Modules.client.utils.displayPanel("message-info", "positive", "warning", "The message has been sent.");
         }
         // Empty input
         $message.value = "";
