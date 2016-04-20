@@ -5,6 +5,8 @@ div.list-usernames {
 
   div.ui.label {
     transition: all .25s;
+    margin-top: 5px;
+    margin-bottom: 5px;
     &:hover {
       background-color: $red;
       color: #FFF;
