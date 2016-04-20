@@ -12,7 +12,8 @@ Template.contentCreateUserName.events({
       var userName = {
         userName: userNameInput.value.trim(),
         createdAt: new Date(),
-        createdBy: Meteor.userId()
+        createdBy: Meteor.userId(),
+        taken: false
       };
       Meteor.call("createRandomUserName", userName, function(err, userNameId) {
         if (err) {

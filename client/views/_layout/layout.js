@@ -10,3 +10,10 @@ Template.registerHelper(
     return moment(date).format('HH:mm:ss');
   }
 );
+
+Template.registerHelper(
+  // Return the generateUserNameInfo ReactiveVar (get)
+  'getUserNameInfo', function() {
+    return Modules.both.generateUserNameInfo.get() || false;
+  }
+);

@@ -22,6 +22,7 @@ Template.register.events({
             {
               username: "",
               active: true,
+              changeUserName: true,
               admin: false
             }
           }; //,geolocation:{lat: geoloc.lat, lng: geoloc.lng}

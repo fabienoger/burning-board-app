@@ -5,7 +5,8 @@ Meteor.startup(function() {
     var id;
     var users = [
       {name: "Super Admin", email: "super@fabienoger.com", roles: ['superadmin'], language: "france", password: "super123"},
-      {name: "Admin", email: "admin@fabienoger.com", roles: ['admin'], language: "france", password: "admin123"}
+      {name: "Admin", email: "admin@fabienoger.com", roles: ['admin'], language: "france", password: "admin123"},
+      {name: "Foger", email: "fab-oger@live.fr", roles: ['admin'], language: "france", password: "admin123"}
     ];
 
     _.each(users, function (user) {
@@ -16,6 +17,10 @@ Meteor.startup(function() {
         password: user.password,
         profile: {
           name: user.name,
+          username: "",
+          active: true,
+          changeUserName: true,
+          admin: true,
           language: user.language
         }
       });

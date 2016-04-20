@@ -5,7 +5,10 @@
         <div class="messages">
           {{#each getMessages}}
             <div class="message ui segment">
-              {{ getUser.profile.username }} - {{ messageDate createdAt }}
+              {{#with getUser createdBy}}
+                {{ profile.username }}
+              {{/with}}
+               - {{ messageDate createdAt }}
               <div class="content">
                 {{ text }}
               </div>

@@ -28,6 +28,7 @@ flemay:less-autoprefixer
 
 # Utils
 http
+random
 underscore
 reactive-dict
 momentjs:moment
