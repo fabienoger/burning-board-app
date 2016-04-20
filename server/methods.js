@@ -50,7 +50,9 @@ Meteor.methods({
     // Check if userNames >= users
     if (userNames.length >= users.length) {
       _.each(users, function(user) {
+        userNames = [];
         userNames = Usernames.find({taken: false}).fetch();
+        console.log("UserNames => ", userNames);
         // Get random UserName
         var randomUserName = Random.choice(userNames);
         // Call upsertUser method
