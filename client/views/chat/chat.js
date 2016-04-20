@@ -8,15 +8,12 @@ Template.chat.onRendered(function() {
     var messages = Messages.find().fetch();
     var $someItem = $('#chat-info-bottom');
 
-    console.log("Scroll");
-//    $(window).scrollTop($someItem.offset().top);
-//    $('div.messages').scrollTop($('div.messages')[0].scrollHeight);
-    var heightMessages = $('div.messages').height();
-    console.log($('div.messages')[0].scrollHeight);
-//    $('div.messages').scrollTop($('div.messages')[0].scrollHeight);
-    $('div.messages').animate({
-        scrollTop: $('#test').css('top')
-    }, heightMessages);
+    // AutoScroll to bottom
+    setTimeout(function() {
+      var messageWindow = $("div.messages");
+      var scrollHeight = messageWindow.prop("scrollHeight");
+      messageWindow.stop().animate({scrollTop: scrollHeight}, 200 || 0);
+    }, 50);
   });
 });
 
