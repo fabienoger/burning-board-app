@@ -1,0 +1,25 @@
+@import "{}/client/views/_layout/config";
+
+div.message.ui.segment {
+  background-color: #fff;
+  border: none;
+  margin: 0;
+  box-shadow: none;
+
+  span.message-username {
+    font-weight: bold;
+  }
+  span.message-date {
+    font-size: 0.8em;
+    color: #333;
+  }
+
+  div.content {
+    font-size: 1.1em;
+  }
+
+  &:hover {
+    background-color: #F9F9F9;
+  }
+}
+

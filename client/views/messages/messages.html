@@ -1,0 +1,8 @@
+<template name="messages">
+  <div class="messages">
+    {{#each getMessages}}
+      {{> message userId=createdBy }}
+    {{/each}}
+    <div id="chat-info-bottom"></div>
+  </div>
+</template>
