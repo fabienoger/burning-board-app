@@ -1,4 +1,15 @@
 <template name="menu">
+  {{#if ifAdmin}}
+    <div class="generate-username-modal ui small modal">
+      <i class="icon close"></i>
+      <div class="message-wrapper" id="username-info"></div>
+      {{> listUserNames}}
+      <div class="ui horizontal divider">Users</div>
+      {{> userNamesUserList}}
+      <div class="ui horizontal divider">Launch Random Generate</div>
+      {{> generateUserNames}}
+    </div>
+  {{/if}}
   <header>
     <div class="ui fixed inverted vertical menu">
       <a href="/" class="item logo">
@@ -20,7 +31,7 @@
           Create UserName
         </a>
         {{#if ifAdmin}}
-          <a class="item" id="generateUserNames">
+          <a class="item" id="displayGenerateUserNames">
             <i class="icon random"></i>
             Generate usernames
           </a>

@@ -13,22 +13,9 @@ Template.menu.onRendered(function() {
 *********************/
 
 Template.menu.events({
-  'click #generateUserNames': function(e, t) {
-    Meteor.call("cleanBeforeGenerate", function(err, results) {
-      if (err) {
-        console.error("cleanBedoreGenerate", err);
-      } else {
-        console.log("Results ", results);
-        Meteor.call("generateUserNames", function(err, result) {
-          if (err) {
-            console.error("generateUserNames", err);
-          } else {
-            console.log("result ", result);
-            
-          }
-        });
-      }
-    });
+  // Display generate UserNames Modal
+  'click #displayGenerateUserNames': function(e, t) {
+    $('.ui.small.modal.generate-username-modal').modal('show');
   },
   // Show modal create username
   'click #create-username': function(e, t) {
