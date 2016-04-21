@@ -2,20 +2,7 @@
   {{#if currentUser}}
     <div class="chat">
       <div class="chat-wrapper">
-        <div class="messages">
-          {{#each getMessages}}
-            <div class="message ui segment">
-              {{#with getUser createdBy}}
-                {{ profile.username }}
-              {{/with}}
-               - {{ messageDate createdAt }}
-              <div class="content">
-                {{ text }}
-              </div>
-            </div>
-          {{/each}}
-          <div id="chat-info-bottom"></div>
-        </div>
+        {{> messages}}
       </div>
       <div class="input-wrapper">
         <form class="" id="send-message-form">

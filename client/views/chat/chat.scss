@@ -9,30 +9,6 @@ div.chat {
     right: 0;
     top: 0;
     bottom: 67px;
-    div.messages {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      top: 0;
-      padding-bottom: 0px;
-      overflow-x: hidden;
-
-      div.message.ui.segment {
-        background-color: #FFF;
-        border: none;
-        margin: 0;
-        box-shadow: none;
-
-        div.content {
-          font-size: 1.1em;
-        }
-
-        &:hover {
-          background-color: #EEE;
-        }
-      }
-    }
   }
 
   div.input-wrapper {
