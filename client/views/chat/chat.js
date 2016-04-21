@@ -59,7 +59,6 @@ Template.chat.events({
 Template.chat.helpers({
   // Return the user with the given _id
   getUser: function(userId) {
-    console.log(Meteor.users.findOne({_id: userId}));
     return Meteor.users.findOne({_id: userId});
   },
   // Return messages

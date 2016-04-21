@@ -1,0 +1,26 @@
+@import "{}/client/views/_layout/config";
+
+div.connected-users {
+  div.header {
+    padding: 13px 10px;
+    color: rgba(255, 255, 255, 0.9);
+    transition: all .25s;
+    border-top: 0.1px solid rgba(255, 255, 255, 0.9);
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.08);
+      color: #FFF;
+    }
+  }
+  div.users {
+    div.user {
+      padding: 5px 10px;
+      color: #F9F9F9;
+      transition: all .25s;
+
+      &:hover {
+        background-color: $p-color;
+      }
+    }
+  }
+}

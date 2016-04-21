@@ -43,7 +43,7 @@ Meteor.methods({
   generateUserNames: function() {
     // Get UserNames and Users
     var userNames = Usernames.find({taken: false}).fetch();
-    var users = Meteor.users.find({"profile.changeUserName": true}).fetch();
+    var users = Meteor.users.find({"profile.changeUserName": true}, {$nor: [{"profile.name": "Super Admin"}, {"profile.name": "Admin"}]}).fetch();
     console.log("users", users);
     console.log("userNames", userNames);
 

@@ -1,0 +1,20 @@
+<template name="connectedUsers">
+  <div class="connected-users">
+    <div class="header">
+      <i class="icon users"></i>
+      Users
+    </div>
+    <div class="users">
+      {{#each getUsers}}
+        <div class="user">
+          {{#if status.online}}
+            <i class="icon circle green"></i>
+          {{ else }}
+            <i class="icon circle thin"></i>
+          {{/if}}
+          {{ profile.username }}
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</template>
