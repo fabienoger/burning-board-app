@@ -17,6 +17,6 @@ burning-board-app:
 mongo:
  image: mongo
  volumes:
-  - ./:/data/db
+  - ./db:/data/db
  ports:
   - 27018:27017
