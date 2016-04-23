@@ -43,16 +43,18 @@ Meteor.methods({
   generateUserNames: function() {
     // Get UserNames and Users
     var userNames = Usernames.find({taken: false}).fetch();
-    var users = Meteor.users.find({"profile.changeUserName": true}, {$nor: [{"profile.name": "Super Admin"}, {"profile.name": "Admin"}]}).fetch();
-    console.log("users", users);
-    console.log("userNames", userNames);
+    var users = Meteor.users.find({
+      $and: [
+        {"profile.changeUserName": true},
+        {$nor: [{"profile.name": "Super Admin"}, {"profile.name": "Admin"}]}
+      ]
+    }).fetch();
 
     // Check if userNames >= users
     if (userNames.length >= users.length) {
       _.each(users, function(user) {
         userNames = [];
         userNames = Usernames.find({taken: false}).fetch();
-        console.log("UserNames => ", userNames);
         // Get random UserName
         var randomUserName = Random.choice(userNames);
         // Call upsertUser method

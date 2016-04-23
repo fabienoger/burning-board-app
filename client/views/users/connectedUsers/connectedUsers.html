@@ -10,7 +10,11 @@
           {{#if status.online}}
             <i class="icon circle green"></i>
           {{ else }}
-            <i class="icon circle thin"></i>
+            {{#if status.idle }}
+              <i class="icon spinner loading green"></i>
+            {{ else }}
+              <i class="icon circle thin red"></i>
+            {{/if}}
           {{/if}}
           {{ profile.username }}
         </div>

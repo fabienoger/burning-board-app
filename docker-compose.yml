@@ -1,0 +1,22 @@
+burning-board-app:
+ image: foger/burning-board
+ ports:
+  - 5000:3000
+ links:
+  - mongo
+ environment:
+  - ROOT_URL=http://localhost:5000/
+  - MONGO_URL=mongodb://mongo:27017/burning-board
+ volumes:
+  - ./:/meteor
+ command:
+  - sh
+  - -c
+  - meteor
+
+mongo:
+ image: mongo
+ volumes:
+  - ./db:/data/db
+ ports:
+  - 27018:27017
