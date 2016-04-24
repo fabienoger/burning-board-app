@@ -29,3 +29,28 @@ Meteor.startup(function() {
     });
   }
 });
+
+// On createUser function
+Accounts.onCreateUser(function(options, user) {
+  // Get userNames & take random userName
+  var userNames = Usernames.find({taken: false}).fetch();
+  var randomUserName = Random.choice(userNames);
+
+  // Affect random userName and change Boolean
+  options.profile.username = randomUserName.userName;
+  options.profile.changeUserName = false;
+
+  // We still want the default hook's 'profile' behavior.
+  if (options.profile) {
+    user.profile = options.profile;
+    // Update userName for taken = true
+    Meteor.call("upsertUserName", randomUserName._id, {$set: {taken: true}}, function(err, result) {
+      if (err) {
+        console.error("upsertUserName", err);
+      } else {
+        console.log("Update userName succesfully !");
+      }
+    });
+  }
+  return user;
+});
