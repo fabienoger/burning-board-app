@@ -8,14 +8,16 @@ Template.connectedUsers.helpers({
     // Get connectedUsers
     var users = Meteor.users.find({
       $and: [
-        {"profile.name": {$not: ["Super Admin", "Admin"]}},
+        {"profile.name": {$not: "Super Admin"}},
+        {"profile.name": {$not: "Admin"}},
         {"status.online": true}
       ]
     }).fetch();
     // Get offlineUsers
     var offlineUsers = Meteor.users.find({
       $and: [
-        {"profile.name": {$not: ["Super Admin", "Admin"]}},
+        {"profile.name": {$not: "Super Admin"}},
+        {"profile.name": {$not: "Admin"}},
         {"status.online": false}
       ]
     }).fetch();

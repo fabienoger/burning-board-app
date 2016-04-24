@@ -1,4 +1,45 @@
 Meteor.startup(function() {
+  // Create defaults usernames
+  if (Usernames.find().fetch().length < 3) {
+    var usernames = [
+      {
+        userName: "letoutpuissant",
+        createdAt: new Date(),
+        taken: false,
+        createdBy: ""
+      },
+      {
+        userName: "42",
+        createdAt: new Date(),
+        taken: false,
+        createdBy: ""
+      },
+      {
+        userName: "cendar",
+        createdAt: new Date(),
+        taken: false,
+        createdBy: ""
+      },
+      {
+        userName: "Toupi",
+        createdAt: new Date(),
+        taken: false,
+        createdBy: ""
+      },
+      {
+        userName: "Toupa",
+        createdAt: new Date(),
+        taken: false,
+        createdBy: ""
+      }
+    ];
+    // Insert UserName
+    console.log("Creating UserNames:");
+    _.each(usernames, function(username) {
+      console.log(username);
+      Usernames.insert(username);
+    });
+  }
   // Create Super Admin and Admin
   if (Meteor.users.find().fetch().length === 0) {
     console.log("Creating users: ");
