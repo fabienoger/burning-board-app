@@ -2,12 +2,10 @@
 
 header {
   div.ui.menu {
+    overflow-y: auto;
     height: 100%;
     div.bottom {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
+      background-color: #1b1c1d;
       width: 100%;
       .item {
         text-align: center;

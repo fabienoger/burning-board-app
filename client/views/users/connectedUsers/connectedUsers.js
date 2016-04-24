@@ -24,6 +24,24 @@ Template.connectedUsers.helpers({
     // Add each offlineUser to users
     _.map(offlineUsers, function(offlineUser) {
       users.push(offlineUser);
+      users.push(offlineUser);
+      users.push(offlineUser);
+      users.push(offlineUser);
+      users.push(offlineUser);
+      users.push(offlineUser);
+      users.push(offlineUser);
+      users.push(offlineUser);
+      users.push(offlineUser);
+      users.push(offlineUser);
+      users.push(offlineUser);
+      users.push(offlineUser);
+      users.push(offlineUser);
+      users.push(offlineUser);
+      users.push(offlineUser);
+      users.push(offlineUser);
+      users.push(offlineUser);
+      users.push(offlineUser);
+      users.push(offlineUser);
     });
     return users;
   }
