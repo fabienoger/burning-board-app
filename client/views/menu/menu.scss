@@ -4,6 +4,20 @@ header {
   div.ui.menu {
     overflow-y: auto;
     height: 100%;
+    &::-webkit-scrollbar-thumb {
+      background-color: $red;
+    }
+    &::-webkit-scrollbar{
+      background-color: $bg-color;
+    }
+    &::-webkit-scrollbar:hover {
+      background-color: $bg-color;
+      margin: 0 2px;
+    }
+    &::-webkit-scrollbar:active {
+      background-color: $bg-color;
+      margin: 0 2px;
+    }
     div.bottom {
       background-color: #1b1c1d;
       width: 100%;
