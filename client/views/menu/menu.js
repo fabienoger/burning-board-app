@@ -13,6 +13,22 @@ Template.menu.onRendered(function() {
 *********************/
 
 Template.menu.events({
+  // Close menu (left: 0/-260px)
+  'click #button-close-menu': function(e, t) {
+    $("main.ui.container-fluid").animate({marginLeft: "0"}, 250);
+    if($("#navbar").css("left") == "0px") {
+      $("#navbar").animate({left: "-260px"}, 250, function() {
+      });
+    }
+  },
+  // Open menu (left: -260/0px)
+  'click #button-open-menu': function(e, t) {
+    $("main.ui.container-fluid").animate({marginLeft: "15rem"}, 250);
+    if($("#navbar").css("left") == "-260px") {
+      $("#navbar").animate({left: "0px"}, 250, function() {
+      });
+    }
+  },
   // Display generate UserNames Modal
   'click #displayGenerateUserNames': function(e, t) {
     $('.ui.small.modal.generate-username-modal').modal('show');

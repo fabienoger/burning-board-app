@@ -1,9 +1,60 @@
 @import "{}/client/views/_layout/config";
 
 header {
-  div.ui.menu {
+
+  div#button-open-menu {
+    z-index: 10;
+    cursor: pointer;
+    position: absolute;
+    line-height: 30px;
+    width: 30px;
+    background-color: #FFF;
+    text-align: center;
+    transition: all .25s;
+    display: none;
+    text-align: center;
+
+    i.icon.sidebar {
+      color: $p-color;
+    }
+
+    &:hover {
+      background-color: $p-color;
+      i.icon.sidebar {
+        color: #FFF;
+      }
+    }
+  }
+  div.ui.menu#navbar {
     overflow-y: auto;
     height: 100%;
+    box-shadow: $p-color 3px 0 3px !important;
+    left: 0px;
+    display: block;
+
+    div#button-close-menu {
+      float: left;
+      z-index: 10;
+      cursor: pointer;
+      position: absolute;
+      line-height: 30px;
+      width: 30px;
+      background-color: #FFF;
+      text-align: center;
+      transition: all .25s;
+      display: none;
+
+      i.icon.close {
+        color: $p-color;
+      }
+
+      &:hover {
+        background-color: $p-color;
+        i.icon.close {
+          color: #FFF;
+        }
+      }
+    }
     &::-webkit-scrollbar-thumb {
       background-color: $p-color;
     }
@@ -50,5 +101,20 @@ header {
         margin-right: inherit !important;
       }
     }
+  }
+}
+
+@media all and (max-width: 650px) {
+  main.ui.container-fluid {
+    margin-left: 0;
+  }
+  div.chat div.input-wrapper {
+    padding-left: 1rem;
+  }
+  #button-close-menu, #button-open-menu {
+    display: block !important;
+  }
+  header div.ui.menu#navbar {
+    left: -260px;
   }
 }
