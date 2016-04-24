@@ -26,6 +26,10 @@ div.chat {
       div.ui.input {
         width: 100%;
       }
+      button.send-button {
+        background-color: $p-color;
+        color: $clear-grey;
+      }
     }
   }
 }

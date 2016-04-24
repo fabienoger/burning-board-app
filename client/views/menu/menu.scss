@@ -5,7 +5,7 @@ header {
     overflow-y: auto;
     height: 100%;
     &::-webkit-scrollbar-thumb {
-      background-color: $red;
+      background-color: $p-color;
     }
     &::-webkit-scrollbar{
       background-color: $bg-color;
