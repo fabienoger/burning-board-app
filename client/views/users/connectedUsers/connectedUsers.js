@@ -5,6 +5,24 @@
 Template.connectedUsers.helpers({
   // Return Array of users
   getUsers: function() {
-    return Meteor.users.find({$nor: [{"profile.name": "Super Admin"}, {"profile.name": "Admin"}]}, {$sort: {"status.online": true}}).fetch();
+    // Get connectedUsers
+    var users = Meteor.users.find({
+      $and: [
+        {"profile.name": {$not: ["Super Admin", "Admin"]}},
+        {"status.online": true}
+      ]
+    }).fetch();
+    // Get offlineUsers
+    var offlineUsers = Meteor.users.find({
+      $and: [
+        {"profile.name": {$not: ["Super Admin", "Admin"]}},
+        {"status.online": false}
+      ]
+    }).fetch();
+    // Add each offlineUser to users
+    _.map(offlineUsers, function(offlineUser) {
+      users.push(offlineUser);
+    });
+    return users;
   }
 });
