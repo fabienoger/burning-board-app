@@ -3,9 +3,11 @@
 *********************/
 
 Template.menu.onRendered(function() {
-  // Initialize dropdown menu users
-  $('.ui.dropdown').dropdown({
-  });
+  // Initialize ui elements
+  setTimeout(function() {
+    $('.ui.accordion').accordion();
+    $('.ui.dropdown').dropdown({});
+  }, 250);
 });
 
 /*********************
@@ -55,10 +57,19 @@ Template.menu.events({
 *********************/
 
 Template.menu.helpers({
-  // Return true if currentUser is admin else return false
-  ifAdmin: function() {
+  // Return true if currentUser is superAdmin else return false
+  isSuperAdmin: function() {
     // Initialize dropdown menu users
     $('.ui.dropdown').dropdown();
+    if (Meteor.user().profile.superAdmin)
+      return true;
+    else
+      return false;
+  },
+  // Return true if currentUser is admin else return false
+  ifAdmin: function() {
+    // Initialize accordion menu users
+    $('.ui.accordion').accordion();
     if (Meteor.user().profile.admin)
       return true;
     else

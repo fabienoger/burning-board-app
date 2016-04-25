@@ -62,7 +62,7 @@ Meteor.startup(function() {
           active: true,
           changeUserName: true,
           admin: true,
-          language: user.language
+          superAdmin: true
         }
       });
       // Email verification

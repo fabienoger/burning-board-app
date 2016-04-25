@@ -27,6 +27,7 @@ header {
   }
   div.ui.menu#navbar {
     overflow-y: auto;
+    overflow-x: visible;
     height: 100%;
     box-shadow: $p-color 3px 0 3px !important;
     left: 0px;
@@ -83,9 +84,24 @@ header {
         margin-right: auto;
       }
     }
-    .ui.left.pointing.dropdown.item {
-      div.menu {
-        width: 75%;
+    .ui.accordion {
+      padding: 0;
+      div.title {
+        padding: 13px 10px !important;
+        color: rgba(255, 255, 255, 0.9);
+        padding: 0;
+        transition: all .25s;
+
+        &:hover {
+          color: #FFF;
+          background-color: rgba(255, 255, 255, 0.08);
+        }
+      }
+      div.content {
+        padding-top: 0;
+        a.item {
+          padding-left: 15px;
+        }
       }
     }
     a.item {

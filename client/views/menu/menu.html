@@ -46,22 +46,25 @@
             <i class="icon bug"></i>
             FeedBacks
           </a>
-          <a class="ui left pointing dropdown link item" href="">
-            <i class="icon users"></i>
-            <i class="dropdown icon"></i>
-            Users
-            <div class="menu">
+-->
+        {{/if}}
+        {{#if isSuperAdmin}}
+          <div class="ui accordion item">
+            <div class="active title">
+              <i class="dropdown icon"></i>
+              Users
+            </div>
+            <div class="content">
               <a class="item" id="newUser" href="/users/new">
                 <i class="icon user add"></i>
                 New User
               </a>
-              <a class="item" id="userList" href="/users">
+              <a class="item" href="/users">
                 <i class="icon users"></i>
                 User List
               </a>
             </div>
-          </a>
--->
+          </div>
         {{/if}}
         {{> connectedUsers}}
         <div class="bottom menu">
