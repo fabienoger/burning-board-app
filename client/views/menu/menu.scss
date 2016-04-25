@@ -11,7 +11,6 @@ header {
     background-color: #FFF;
     text-align: center;
     transition: all .25s;
-    display: none;
     text-align: center;
 
     i.icon.sidebar {
@@ -29,7 +28,7 @@ header {
     overflow-y: auto;
     overflow-x: visible;
     height: 100%;
-    box-shadow: $p-color 3px 0 3px !important;
+    box-shadow: $p-color 2px 0 2px !important;
     left: 0px;
     display: block;
 
@@ -58,17 +57,18 @@ header {
     }
     &::-webkit-scrollbar-thumb {
       background-color: $p-color;
+      border-radius: 5px;
     }
-    &::-webkit-scrollbar{
+    &::-webkit-scrollbar {
       background-color: $bg-color;
+      width: 10px;
+      border-radius: 5px;
     }
     &::-webkit-scrollbar:hover {
       background-color: $bg-color;
-      margin: 0 2px;
     }
     &::-webkit-scrollbar:active {
       background-color: $bg-color;
-      margin: 0 2px;
     }
     div.bottom {
       background-color: #1b1c1d;
