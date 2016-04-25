@@ -29,7 +29,7 @@ Template.createFeedBack.events({
       }, function(err, result) {
         if (err) {
           // Error display error message
-          console.log(err);
+          console.error("createFeedBack ", err);
           Modules.client.utils.displayPanel("feedBackInfo", "negative", "warning", "Oups ! Something went wrong !");
         } else {
           // Success display success message and empty fields
