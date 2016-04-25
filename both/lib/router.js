@@ -15,6 +15,22 @@ FlowRouter.route('/editUser', {
   name: 'editUser'
 });
 
+// User List
+FlowRouter.route('/users', {
+  action: function() {
+    BlazeLayout.render('layout', { main: 'users', navbar: 'menu' });
+  },
+  name: 'users'
+});
+
+// new User
+FlowRouter.route('/users/new', {
+  action: function() {
+    BlazeLayout.render('layout', { main: 'createUser', navbar: 'menu' });
+  },
+  name: 'createUser'
+});
+
 // Login route
 FlowRouter.route('/login', {
   action: function() {

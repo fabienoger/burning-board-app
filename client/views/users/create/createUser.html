@@ -1,0 +1,45 @@
+<template name="createUser">
+  <div class="create-user ui segment">
+    <div class="ui header">
+      <i class="icon user add"></i>
+      Create User
+    </div>
+    <form id="new-user-form" action="action" class="ui form">
+      <div id="new-user-info" class="message-wrapper"></div>
+      <div class="field">
+        <label for="account-email">Email : </label>
+        <input type="email" class="" id="account-email" />
+      </div>
+      <div class="field">
+        <label for="account-password">Password : </label>
+        <input type="password" class="" id="account-password" />
+      </div>
+      <div class="field">
+        <label for="confirm-password">Confirm password : </label>
+        <input type="password" class="" id="confirm-password" />
+      </div>
+      <div class="ui segment">
+        <div class="field">
+          <div class="ui toggle checkbox">
+            <input type="checkbox" id="account-super-admin" name="superAdmin" tabindex="0" class="hidden" />
+            <label>Super Admin</label>
+          </div>
+        </div>
+      </div>
+      <div class="ui segment">
+        <div class="field">
+          <div class="ui toggle checkbox">
+            <input type="checkbox" id="account-admin" name="admin" tabindex="0" class="hidden" />
+            <label>Admin</label>
+          </div>
+        </div>
+      </div>
+      <div class="action">
+        <button type="submit" class="ui right labeled green icon button" id="submit-new-user-form">
+          <i class="add user icon right"></i>
+          Create
+        </button>
+      </div>
+    </form>
+  </div>
+</template>
