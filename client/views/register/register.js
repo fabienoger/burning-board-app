@@ -30,7 +30,7 @@ Template.register.events({
           Accounts.createUser(user, function(err) {
             if (!err) {
               FlowRouter.go('/');
-              Modules.client.utils.displayPanel("message-info", "positive", "checkmark", "Welcome ! You're login.");
+              Modules.client.utils.displayWelcomePanel();
             } else {
               console.log(err);
               if (err.error == 400) {

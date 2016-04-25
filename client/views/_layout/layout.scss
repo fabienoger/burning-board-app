@@ -14,12 +14,20 @@ main.ui.container-fluid {
   position: relative;
 }
 
+// Color
+.primary-color {
+  background-color: $p-color !important;
+  color: #FFF !important;
+
+}
+
 // Infos wrapper
 div#message-info {
   z-index: 5;
   position: fixed;
   width: 100%;
   padding-bottom: 0;
+  padding-right: 16rem;
 }
 div.message-wrapper {
   position: relative;
