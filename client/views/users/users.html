@@ -4,5 +4,76 @@
       <i class="icon users"></i>
       Users
     </div>
+    <div class="row">
+      <div class="ui grid stackable">
+        <div class="eight wide column well">
+          <button id="empty-update-user" class="ui green button labeled icon right floated">
+            <i class="add user icon"></i>
+            New User
+          </button>
+          <div id="info-users"></div>
+          <div class="ui styled accordion">
+            {{#each users}}
+              <div class="title">
+                <i class="dropdown icon"></i>
+                {{#if profile.admin }}
+                  <i class="bordered icon terminal inverted red"></i>
+                {{/if}}
+                {{ profile.username }}
+              </div>
+              <div class="content">
+                <p>
+                  <i class="icon tag"></i>
+                  Id : {{ _id }}
+                </p>
+                <p>
+                  <i class="icon mail"></i>
+                  Email : {{ emails.[0].address }}
+                </p>
+                <p>
+                  <i class="icon ban"></i>
+                  Super Admin :
+                  {{#if profile.superAdmin }}
+                    true
+                  {{ else }}
+                    false
+                  {{/if}}
+                </p>
+                <p>
+                  <i class="icon terminal"></i>
+                  Admin :
+                  {{#if profile.admin }}
+                    true
+                  {{ else }}
+                    false
+                  {{/if}}
+                </p>
+                <div class="actions">
+                  <a href="/users/{{ _id }}" class="ui button labeled icon blue">
+                    <i class="icon eye"></i>
+                    See
+                  </a>
+                  <button data-id="{{ _id }}" class="ui button labeled icon green update-user">
+                    <i class="icon settings"></i>
+                    Update
+                  </button>
+                  <button data-id="{{ _id }}" class="ui button labeled icon red remove-user">
+                    <i class="icon remove user"></i>
+                    Remove
+                  </button>
+                </div>
+              </div>
+            {{/each}}
+          </div>
+        </div>
+        <div class="eight wide column">
+          {{#if selectedUser}}
+            {{> updateUser}}
+          {{else}}
+            {{> createUser}}
+          {{/if}}
+        </div>
+      </div>
+    </div>
   </div>
 </template>

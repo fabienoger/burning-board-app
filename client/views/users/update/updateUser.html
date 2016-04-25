@@ -1,0 +1,37 @@
+<template name="updateUser">
+  <div class="update-user">
+    <div class="ui header">
+      <i class="edit icon"></i>
+      Update {{ selectedUser.profile.username }}
+    </div>
+    <form class="ui form" id="update-user">
+      <div id="update-user-info" class="message-wrapper"></div>
+      <div class="field">
+        <label for="account-email">Email : </label>
+        <input type="email" id="account-email" value="{{ selectedUser.emails.[0].address }}" />
+      </div>
+      <div class="ui segment">
+        <div class="field">
+          <div class="ui toggle checkbox">
+            <input type="checkbox" id="account-admin" name="admin" tabindex="0" class="hidden" checked={{selectedUser.profile.admin }} />
+            <label>Admin</label>
+          </div>
+        </div>
+      </div>
+      <div class="ui segment">
+        <div class="field">
+          <div class="ui toggle checkbox">
+            <input type="checkbox" id="account-super-admin" name="superAdmin" tabindex="0" class="hidden" checked={{selectedUser.profile.superAdmin }} />
+            <label>Super Admin</label>
+          </div>
+        </div>
+      </div>
+      <div class="action">
+        <button type="submit" class="ui labeled green icon button">
+          <i class="save icon"></i>
+          Save
+        </button>
+      </div>
+    </form>
+  </div>
+</template>

@@ -85,6 +85,7 @@ Accounts.onCreateUser(function(options, user) {
     options.profile.username = "Newbie";
   }
   options.profile.changeUserName = false;
+  options.profile.active = true;
 
   // We still want the default hook's 'profile' behavior.
   if (options.profile) {
