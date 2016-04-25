@@ -1,4 +1,8 @@
 <template name="menu">
+  <div class="create-feedBack-modal ui small modal">
+    <i class="icon close"></i>
+    {{> createFeedBack}}
+  </div>
   {{#if ifAdmin}}
     <div class="generate-username-modal ui small modal">
       <i class="icon close"></i>
@@ -36,17 +40,15 @@
           <i class="icon add"></i>
           Create UserName
         </a>
+        <a class="item" id="displayCreateFeedBack">
+          <i class="icon bug"></i>
+          Send FeedBack
+        </a>
         {{#if ifAdmin}}
           <a class="item" id="displayGenerateUserNames">
             <i class="icon random"></i>
             Generate usernames
           </a>
-<!--
-          <a class="item" id="feedBacks" href="/feedbacks">
-            <i class="icon bug"></i>
-            FeedBacks
-          </a>
--->
         {{/if}}
         {{#if isSuperAdmin}}
           <div class="ui accordion item">
@@ -65,6 +67,10 @@
               </a>
             </div>
           </div>
+          <a class="item" id="feedBacks" href="/feedbacks">
+            <i class="icon bug"></i>
+            FeedBacks
+          </a>
         {{/if}}
         {{> connectedUsers}}
         <div class="bottom menu">

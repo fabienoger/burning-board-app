@@ -1,0 +1,33 @@
+<template name="createFeedBack">
+  <div class="createFeedback">
+    <h1 class="ui header attached top">
+      <i class="icon bug"></i>
+      Send FeedBack
+    </h1>
+    <div class="ui attached segment">
+      <div class="ui message info">
+        <div class="header">
+          This application is currently in development.
+        </div>
+        <p>Please give me a feedback for improving this application !</p>
+      </div>
+    </div>
+    <div class="ui attached segment">
+      <form class="ui form" id="formFeedBack">
+        <div id="feedBackInfo"></div>
+        <div class="field">
+          <label for="titleFeedBack">Title : </label>
+          <input type="text" id="titleFeedBack" />
+        </div>
+        <div class="field">
+          <label for="messageFeedBack">Message : </label>
+          <textarea rows="3" id="messageFeedBack"></textarea>
+        </div>
+        <button type="submit" class="ui button labeled icon green">
+          <i class="icon checkmark"></i>
+          Send
+        </button>
+      </form>
+    </div>
+  </div>
+</template>

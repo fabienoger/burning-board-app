@@ -1,0 +1,9 @@
+@import "{}/client/views/_layout/config";
+
+div.createFeedback {
+  form.ui.form {
+    div#feedBackInfo {
+      margin-bottom: 15px;
+    }
+  }
+}

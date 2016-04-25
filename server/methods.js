@@ -1,5 +1,13 @@
 Meteor.methods({
 /**********************
+*       FeedBacks
+*/
+  // Create FeedBack
+  createFeedBack: function(feedBack) {
+    var feedBackId = FeedBacks.insert(feedBack);
+    return feedBackId;
+  },
+/**********************
 *       Messages
 */
   // Create message

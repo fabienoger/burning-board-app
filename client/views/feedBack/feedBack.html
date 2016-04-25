@@ -1,0 +1,70 @@
+<template name="feedBacks">
+  <div class="feedBacks">
+    <h1 class="ui header attached top">
+      <i class="icon bug"></i>
+      FeedBacks
+    </h1>
+    <div class="ui attached segment">
+      <div class="ui accordion">
+        {{#each getFeedBacks}}
+          <div class="title">
+            <i class="dropdown icon"></i>
+            {{ title }}
+          </div>
+          <div class="content">
+            <p>
+              <span class="ui label">
+                <i class="icon wait"></i>
+                Created At : 
+              </span>
+              {{ formatDate createdAt }}
+            </p>
+            <span class="ui label">
+              <i class="icon mail"></i>
+              Message :
+            </span>
+            <div class="ui message red">
+              {{ message }}
+            </div>
+            {{#with findUser userId}}
+              <a href="/users/{{ _id }}" class="ui label">
+                <i class="icon user"></i>
+                Created by : {{ profile.username }}
+              </a>
+              <div class="ui message red">
+                  <p>
+                    <span class="ui label">
+                      <i class="icon mail"></i>
+                      Email : 
+                    </span>
+                    {{ emails.[0].address }}
+                  </p>
+                  <p>
+                    <span class="ui label">
+                      <i class="icon terminal"></i>
+                      Admin : 
+                    </span>
+                    {{ profile.admin }}
+                  </p>
+                  <p>
+                    <span class="ui label">
+                      <i class="icon terminal"></i>
+                      Super Admin : 
+                    </span>
+                    {{ profile.superAdmin }}
+                  </p>
+                  <p>
+                    <span class="ui label">
+                      <i class="icon ban"></i>
+                      Active : 
+                    </span>
+                    {{ profile.active }}
+                  </p>
+              </div>
+            {{/with}}
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</template>

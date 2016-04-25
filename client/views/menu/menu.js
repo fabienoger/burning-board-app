@@ -33,6 +33,10 @@ Template.menu.events({
       });
     }
   },
+  // Display create feedBack Modal
+  'click #displayCreateFeedBack': function(e, t) {
+    $('.ui.small.modal.create-feedBack-modal').modal('show');
+  },
   // Display generate UserNames Modal
   'click #displayGenerateUserNames': function(e, t) {
     $('.ui.small.modal.generate-username-modal').modal('show');
