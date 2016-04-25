@@ -52,7 +52,12 @@ Template.users.helpers({
   },
   // Return all users
   'users': function() {
-    return Meteor.users.find({}).fetch();
+    return Meteor.users.find({
+      $and: [
+          {"profile.name": {$not: "Super Admin"}},
+          {"profile.name": {$not: "Admin"}}
+      ]
+    }).fetch();
   },
   // Get the currentUser selected
   'selectedUser': function() {
