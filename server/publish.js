@@ -2,8 +2,8 @@ Meteor.publish('usernames', function() {
   return Usernames.find({});
 });
 
-Meteor.publish('messages', function() {
-  return Messages.find({});
+Meteor.publish('messages', function(channel) {
+  return Messages.find({channel: channel});
 });
 
 Meteor.publish('feedBacks', function() {
@@ -16,4 +16,8 @@ Meteor.publish('users', function() {
 
 Meteor.publish("userStatus", function() {
   return Meteor.users.find({ "status.online": true });
+});
+
+Meteor.publish('channels', function () {
+  return Channels.find({});
 });

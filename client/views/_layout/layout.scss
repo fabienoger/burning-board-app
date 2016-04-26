@@ -14,6 +14,11 @@ main.ui.container-fluid {
   position: relative;
 }
 
+// Loader style
+div.ui.active.loader:after {
+  border-color: $p-color transparent transparent;
+}
+
 // Color
 .primary-color {
   background-color: $p-color !important;

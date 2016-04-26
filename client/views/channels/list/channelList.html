@@ -1,0 +1,14 @@
+<template name="channelList">
+  <div class="item channel-list">
+    <div class="header">
+      CHANNELS
+      ({{ nbChannels }})
+      <i id="displayCreateChannel" class="icon plus square outline large"></i>
+    </div>
+    <div class="content">
+      {{#each channels}}
+        {{> channel name=name }}
+      {{/each}}
+    </div>
+  </div>
+</template>

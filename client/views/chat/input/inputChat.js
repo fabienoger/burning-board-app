@@ -53,7 +53,7 @@ Template.inputChat.events({
         text: $message.value.trim(),
         createdAt: new Date(),
         createdBy: Meteor.userId(),
-        channelId: null
+        channel: Modules.client.channels.current.get()
       }
       // Call insertMessage method
       Meteor.call("insertMessage", message, function(error, result) {

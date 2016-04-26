@@ -1,8 +1,12 @@
 <template name="messages">
   <div class="messages">
-    {{#each getMessages}}
-      {{> message userId=createdBy }}
-    {{/each}}
+    {{#if Template.subscriptionsReady}}
+      {{#each getMessages}}
+        {{> message userId=createdBy }}
+      {{/each}}
+    {{ else }}
+      <div class="ui active loader"></div>
+    {{/if}}
     <div id="chat-info-bottom"></div>
   </div>
 </template>

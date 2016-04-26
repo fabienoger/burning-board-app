@@ -1,0 +1,18 @@
+@import "{}/client/views/_layout/config";
+
+a.channel {
+  cursor: pointer;
+  display: block;
+  font-size: 1rem;
+  padding: 7.5px 10px;
+  color: rgba(255, 255, 255, 0.9);
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+  }
+  &.active {
+    color: rgba(255, 255, 255, 0.9);
+    background-color: $p-color;
+  }
+}

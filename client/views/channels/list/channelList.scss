@@ -1,0 +1,27 @@
+@import "{}/client/views/_layout/config";
+
+div.channel-list.item {
+  padding: 0 !important;
+  div.header {
+    padding: 13px 10px;
+    margin: 0 !important;
+    cursor: pointer;
+    transition: all .25s;
+
+    i {
+      float: right;
+    }
+
+    &:hover {
+      color: #FFF;
+      background-color: rgba(255, 255, 255, 0.08);
+
+      i {
+        color: $p-color;
+      }
+    }
+  }
+  div.content {
+
+  }
+}
