@@ -1,11 +1,21 @@
 Meteor.methods({
 /**********************
+*       Channels
+*/
+  // Create Channel
+  createChannel: function(channel) {
+    return Channels.insert(channel);
+  },
+  // Remove Channel
+  removeChannel: function(channelId) {
+    return Channels.remove({_id: channelId});
+  },
+/**********************
 *       FeedBacks
 */
   // Create FeedBack
   createFeedBack: function(feedBack) {
-    var feedBackId = FeedBacks.insert(feedBack);
-    return feedBackId;
+    return FeedBacks.insert(feedBack);
   },
 /**********************
 *       Messages

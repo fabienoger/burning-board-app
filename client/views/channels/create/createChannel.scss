@@ -1,0 +1,9 @@
+@import "{}/client/views/_layout/config";
+
+div.create-channel {
+  padding: 15px;
+
+  h1.ui.header {
+    color: $p-color;
+  }
+}

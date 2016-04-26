@@ -35,14 +35,16 @@ Meteor.startup(function() {
   if (Channels.find().fetch().length < 2) {
     var channels = [{
         name: "general",
-        members: "",
+        members: [],
         public: true,
-        createdBy: ""
+        createdBy: "",
+        createdAt: new Date()
       }, {
         name: "random",
         members: "",
         public: true,
-        createdBy: ""
+        createdBy: "",
+        createdAt: new Date()
       }
     ];
 

@@ -1,9 +1,13 @@
 <template name="channelList">
+  <div class="create-channel ui small modal">
+    <i class="icon close"></i>
+    {{> createChannel}}
+  </div>
   <div class="item channel-list">
-    <div class="header">
+    <div id="displayCreateChannel" class="header">
       CHANNELS
       ({{ nbChannels }})
-      <i id="displayCreateChannel" class="icon plus square outline large"></i>
+      <i class="icon plus square outline large"></i>
     </div>
     <div class="content">
       {{#each channels}}
