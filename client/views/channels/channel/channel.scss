@@ -7,9 +7,19 @@ a.channel {
   padding: 7.5px 10px;
   color: rgba(255, 255, 255, 0.9);
 
+  i.remove-channel {
+    float: right;
+    display: none;
+    
+  }
+
   &:hover {
     background: rgba(255, 255, 255, 0.08);
     color: #ffffff;
+
+    i.remove-channel {
+      display: block;
+    }
   }
   &.active {
     color: rgba(255, 255, 255, 0.9);

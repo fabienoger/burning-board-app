@@ -6,9 +6,14 @@ Meteor.methods({
   createChannel: function(channel) {
     return Channels.insert(channel);
   },
-  // Remove Channel
-  removeChannel: function(channelId) {
-    return Channels.remove({_id: channelId});
+  // Remove Channel by name
+  removeChannel: function(channel) {
+    // Check if channel name isn't "general" OR "random"
+    if (channel != "general" && channel != "random") {
+      return Channels.remove({name: channel});
+    } else {
+      return 0;
+    }
   },
 /**********************
 *       FeedBacks

@@ -23,6 +23,7 @@ Template.createChannel.events({
 
     // Create selectedMembers [] & .push selectedMembers in
     var selectedMembers = [];
+    selectedMembers.push(Meteor.userId());
     _.each(membersChannel.options, function(member) {
       if (member.selected) {
         selectedMembers.push(member.value);
@@ -75,8 +76,8 @@ Template.createChannel.events({
 ********************/
 
 Template.createChannel.helpers({
-  // Return all users
+  // Return all users except the current
   getUsers: function() {
-    return Meteor.users.find().fetch();
+    return Meteor.users.find({_id: {$ne: Meteor.userId()}}).fetch();
   }
 });

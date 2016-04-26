@@ -1,4 +1,15 @@
 <template name="channelList">
+  <div class="remove-channel ui basic modal">
+    <i class="icon close"></i>
+    <div class="header">
+      <i class="icon warning sign"></i>
+      Are you ABSOLUTELY sure ?
+    </div>
+    <div class="actions">
+      <div class="ui cancel button">Cancel</div>
+      <div class="ui positive button">Yes, remove this channel</div>
+    </div>
+  </div>
   <div class="create-channel ui small modal">
     <i class="icon close"></i>
     {{> createChannel}}

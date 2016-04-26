@@ -2,5 +2,8 @@
   <a href="/{{name}}" class="channel {{active}}">
     <span class="prefix">#</span>
     <span class="channel-name">{{ name }}</span>
+    {{#if iCanRemove}}
+      <i data-channelname="{{ name }}" class="icon remove remove-channel red"></i>
+    {{/if}}
   </a>
 </template>
