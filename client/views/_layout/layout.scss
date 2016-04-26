@@ -40,3 +40,41 @@ div.message-wrapper {
 .ui.button, div.card, input, .ui.label, .ui.accordion, .ui.segment, .ui.message, div.menu, textarea, .ui.header, .ui.modal {
   border-radius: 0px !important;
 }
+
+/* AutoComplete styles for Emoji One */
+.dropdown-menu {
+  list-style: none;
+  bottom: 75px !important;
+  left: 15rem !important;
+  right: 2rem;
+  top: auto !important;
+  padding: .3em;
+  margin: 0;
+//  border: 1px solid $p-color;
+  background-color: white;
+  border-radius: 0px;
+  overflow: hidden;
+  font-size: inherit;
+  letter-spacing: .025em;
+  box-shadow: 3px 3px 3px $p-color;
+  margin-left: 15px;
+}
+.dropdown-menu a:hover {
+  cursor: pointer;
+}
+.dropdown-menu li {
+  letter-spacing: 0;
+  display: inline-block;
+  float: none;
+  margin: 0;
+  border:none;
+}
+.dropdown-menu li:before {
+  display: none;
+}
+.dropdown-menu li .emojione {
+  vertical-align: middle;
+  font-size: 1.23em;
+  width: 1em;
+  height: 1em;
+}

@@ -5,7 +5,9 @@
     {{/with}}
     - <span class="message-date">{{ messageDate ../createdAt }}</span>
     <div class="content">
-      {{ ../text }}
+      {{#emoji}}
+        {{ ../text }}
+      {{/emoji}}
     </div>
   </div>
 </template>

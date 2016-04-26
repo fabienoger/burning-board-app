@@ -21,15 +21,5 @@ div.chat {
     padding-left: 16rem;
     background-color: #FFF;
     border-top: 2px solid $grey;
-
-    form {
-      div.ui.input {
-        width: 100%;
-      }
-      button.send-button {
-        background-color: $p-color;
-        color: $clear-grey;
-      }
-    }
   }
 }

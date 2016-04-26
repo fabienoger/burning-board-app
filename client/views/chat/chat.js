@@ -23,33 +23,6 @@ Template.chat.onRendered(function() {
 ********************/
 
 Template.chat.events({
-  // Form processing
-  'submit #send-message-form': function(e, t) {
-    e.preventDefault();
-    var $message = t.find('#message-input');
-
-    // Check if message != null
-    if ($message.value.trim()) {
-      var message = {
-        text: $message.value.trim(),
-        createdAt: new Date(),
-        createdBy: Meteor.userId(),
-        channelId: null
-      }
-      // Call insertMessage method
-      Meteor.call("insertMessage", message, function(error, result) {
-        if (error) {
-          console.error("insertMessage", error);
-        } else {
-          Modules.client.utils.displayPanel("message-info", "positive", "warning", "The message has been sent.");
-        }
-        // Empty input
-        $message.value = "";
-      });
-    } else {
-
-    }
-  }
 });
 
 /********************

@@ -20,6 +20,7 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 # Front
 semantic:ui
 fourseven:scss
+seriousm:emoji-continued
 
 # Routes
 kadira:flow-router
@@ -32,6 +33,7 @@ random
 underscore
 reactive-dict
 momentjs:moment
+mquandalle:jquery-textcomplete
 
 # Accounts
 email

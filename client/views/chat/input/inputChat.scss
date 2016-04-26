@@ -1,0 +1,11 @@
+@import "{}/client/views/_layout/config";
+
+form#send-message-form {
+  div.ui.input {
+    width: 100%;
+  }
+  button.send-button {
+    background-color: $p-color;
+    color: $clear-grey;
+  }
+}
