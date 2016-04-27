@@ -1,14 +1,14 @@
 FlowRouter.route('/', {
   action: function() {
 //    BlazeLayout.render('layout', { main: 'chat', navbar: 'menu' });
-    FlowRouter.go('/general');
+    FlowRouter.go('/channels/general');
   },
   name: 'chat'
 });
 
 // ##### Channels #####
 
-FlowRouter.route('/:channel', {
+FlowRouter.route('/channels/:channel', {
   action: function(params, queryParams) {
     Modules.client.channels.current.set(params.channel);
     BlazeLayout.render('layout', { main: 'chat', navbar: 'menu' });
