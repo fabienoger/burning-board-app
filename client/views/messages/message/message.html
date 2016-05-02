@@ -6,7 +6,9 @@
     - <span class="message-date">{{ messageDate ../createdAt }}</span>
     <div class="content">
       {{#emoji}}
-        {{ ../text }}
+        {{#autolink}}
+          {{ ../text }}
+        {{/autolink}}
       {{/emoji}}
     </div>
   </div>
