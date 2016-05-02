@@ -25,16 +25,18 @@
       <a href="/channels/general" class="item logo">
         <img class="ui circular image" src="/images/burning_keyboard.png">
       </a>
+<!--
       <div class="item">
         <div class="ui icon input">
           <input type="text" placeholder="Search">
           <i class="search icon"></i>
         </div>
       </div>
+-->
       {{#if currentUser}}
         <a class="item" id="editUser" href="/editUser">
           <i class="icon user"></i>
-          {{ currentUser.emails.[0].address }}
+          {{ currentUser.profile.username }}
         </a>
         <a class="item" id="create-username">
           <i class="icon add"></i>
