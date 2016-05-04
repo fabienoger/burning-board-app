@@ -2,7 +2,11 @@
   <div class="messages">
     {{#if Template.subscriptionsReady}}
       {{#each getMessages}}
-        {{> message userId=createdBy }}
+        {{#if sameAuthor @index createdBy }}
+          {{> message userId=createdBy sameAuthor=true }}
+        {{else}}
+          {{> message userId=createdBy sameAuthor=false }}
+        {{/if}}
       {{/each}}
     {{ else }}
       <div class="ui active loader"></div>
