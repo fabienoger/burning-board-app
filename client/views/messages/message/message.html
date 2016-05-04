@@ -1,12 +1,12 @@
 <template name="message">
-  <div class="message ui segment">
+  <div class="message ui segment {{#if sameAuthor}}same-author{{/if}}">
     {{#unless sameAuthor}}
       {{#with getUser userId }}
         <span class="message-username">{{ profile.username }}</span>
       {{/with}}
       - <span class="message-date">{{ messageDate ../createdAt }}</span>
     {{/unless}}
-    <div class="content">
+    <div class="content {{#if sameAuthor}}same-author{{/if}}">
       {{#emoji}}
         {{#autolink}}
           {{ ../text }}

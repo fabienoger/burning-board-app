@@ -6,6 +6,11 @@ div.message.ui.segment {
   margin: 0;
   box-shadow: none;
 
+  &.same-author {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
   span.message-username {
     font-weight: bold;
   }
@@ -16,6 +21,11 @@ div.message.ui.segment {
 
   div.content {
     font-size: 1.1em;
+
+    &.same-author {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
 
     img.emoji {
       font-size: inherit;

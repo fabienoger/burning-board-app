@@ -28,14 +28,11 @@ Template.messages.helpers({
   // Return true if is the same author to last message
   sameAuthor: function(index, userId) {
     var messages = Messages.find({}, {limit: 400}).fetch();
-    for (var i = 0; i < messages.length; i++) {
-      if (i == index - 1) {
-        if (messages[i].createdBy == userId) {
-          return true;
-        } else {
-          return false;
-        }
-      }
+    console.log(messages[index - 1]);
+    if (messages[index - 1].createdBy == userId) {
+      return true;
+    } else {
+      return false;
     }
   }
 });
