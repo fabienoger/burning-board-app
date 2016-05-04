@@ -7,7 +7,7 @@ Template.messages.onCreated(function() {
   // Subscribe to the current Channel
   self.autorun(function() {
     var channel = Modules.client.channels.current.get();
-    var conversationId = Modules.client.conversations.current.get();
+//    var conversationId = Modules.client.conversations.current.get();
     if (channel) {
       self.subscribe('channelMessages', channel);
     } else {
