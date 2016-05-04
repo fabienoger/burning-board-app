@@ -6,10 +6,22 @@ FlowRouter.route('/', {
   name: 'chat'
 });
 
+// ##### Messages #####
+
+FlowRouter.route('/conversations/:id', {
+  action: function(params, queryParams) {
+    Modules.client.channels.current.set(false);
+    Modules.client.conversations.current.set(params.id);
+    BlazeLayout.render('layout', { main: 'chat', navbar: 'menu' });
+  },
+  name: 'Conversations'
+});
+
 // ##### Channels #####
 
 FlowRouter.route('/channels/:channel', {
   action: function(params, queryParams) {
+    Modules.client.conversations.current.set(false);
     Modules.client.channels.current.set(params.channel);
     BlazeLayout.render('layout', { main: 'chat', navbar: 'menu' });
   },
@@ -70,8 +82,6 @@ FlowRouter.route('/register', {
 
 function redirectIfIsNotLogin(context) {
   if (!Meteor.userId()) {
-// The following line isn't executed
-//    BlazeLayout.render('layout', { main: 'login' }, {force: true});
     FlowRouter.go('login');
   } else {
 //    console.log(context);
