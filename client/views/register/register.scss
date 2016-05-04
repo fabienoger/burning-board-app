@@ -21,6 +21,8 @@ div.register.row {
         background-color: $p-color;
         color: #FFF;
         transition: all .25s;
+        display: block;
+        width: 100%;
 
         &:hover {
           background-color: $clear-p-color;
