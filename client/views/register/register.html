@@ -1,30 +1,43 @@
 <template name="register">
-  <div class="register ui container">
-    <h2 class="center-align">Inscription</h2>
-    <form id="register-form" class="ui form">
-      <div class="message-wrapper" id="register-info"></div>
-      <div class="field">
-        <label for="account-email">Email : </label>
-        <input type="email" class="" id="account-email" />
+  <div class="register row">
+    <div class="ui middle aligned center aligned grid">
+      <div class="column">
+        <div class="ui segment title">
+          <h2 class="ui header">
+            Registration
+          </h2>
+        </div>
+        <form id="register-form" class="ui large form">
+          <div class="ui stacked segment">
+            <div class="message-wrapper" id="register-info"></div>
+            <div class="field">
+              <div class="ui left icon input">
+                <i class="icon mail"></i>
+                <input type="email" id="account-email" placeholder="E-mail" />
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui left icon input">
+                <i class="icon lock"></i>
+                <input type="password" id="account-password" placeholder="Password" />
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui left icon input">
+                <i class="icon lock"></i>
+                <input type="password" id="confirm-password" placeholder="Confirm your password" />
+              </div>
+            </div>
+            <button type="submit" class="ui large fuild button">
+              Sign up
+            </button>
+          </div>
+        </form>
+        <div class="ui message">
+          You already have an account ?
+          <a href="/login">Sign in</a>
+        </div>
       </div>
-      <div class="field">
-        <label for="account-password">Password : </label>
-        <input type="password" class="" id="account-password" />
-      </div>
-      <div class="field">
-        <label for="confirm-password">Confirm your password : </label>
-        <input type="password" class="" id="confirm-password" />
-      </div>
-      <div class="action">
-        <button type="submit" class="ui labeled green icon button">
-          <i class="checkmark icon"></i>
-          Sign up
-        </button>
-        <a href="/login" class="ui right floated labeled blue icon button">
-          <i class="sign in icon"></i>
-          Sign in
-        </a>
-      </div>
-    </form>
+    </div>
   </div>
 </template>
