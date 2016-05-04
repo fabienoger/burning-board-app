@@ -2,7 +2,20 @@ Meteor.publish('usernames', function() {
   return Usernames.find({});
 });
 
-Meteor.publish('messages', function(channel) {
+Meteor.publish('conversations', function() {
+  return Conversations.find({});
+});
+/*
+Meteor.publish('privateMessages', function(conversationId) {
+  return Messages.find({conversationId: conversationId});
+});
+
+Meteor.publish('channelMessages', function(channel) {
+  return Messages.find({channel: channel});
+});
+*/
+
+Meteor.publish('channel', function(channel) {
   return Messages.find({channel: channel});
 });
 
