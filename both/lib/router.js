@@ -27,7 +27,7 @@ FlowRouter.route('/conversations/:id', {
 
 FlowRouter.route('/channels/:channel', {
   action: function(params, queryParams) {
-    Modules.client.conversations.current.set(false);
+//    Modules.client.conversations.current.set(false);
     Modules.client.channels.current.set(params.channel);
     BlazeLayout.render('layout', { main: 'chat', navbar: 'menu' });
   },
