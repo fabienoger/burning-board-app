@@ -74,9 +74,14 @@ Template.menu.helpers({
   ifAdmin: function() {
     // Initialize accordion menu users
     $('.ui.accordion').accordion();
-    if (Meteor.user().profile.admin)
-      return true;
-    else
+    if (Meteor.user()) {
+      if (Meteor.user().profile.admin) {
+        return true;
+      } else {
+        return false;
+      }
+    } else {
       return false;
+    }
   }
 });

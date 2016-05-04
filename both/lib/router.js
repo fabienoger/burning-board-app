@@ -12,6 +12,7 @@ FlowRouter.route('/', {
 
 // ##### Messages #####
 
+/*
 FlowRouter.route('/conversations/:id', {
   action: function(params, queryParams) {
     Modules.client.channels.current.set(false);
@@ -20,6 +21,7 @@ FlowRouter.route('/conversations/:id', {
   },
   name: 'Conversations'
 });
+*/
 
 // ##### Channels #####
 
