@@ -1,3 +1,30 @@
+// Layout events
+
+Template.layout.events({
+  // Update title (asterisk) notification
+  'click #__blaze-root': function (e, t) {
+    var channel = Modules.client.channels.current.get();
+    document.title = channel + " | Burning Board";
+  }
+});
+
+
+$(window).on("blur focus", function(e) {
+  var prevType = $(this).data("prevType"); // getting identifier to check by
+  if (prevType != e.type) {   //  reduce double fire issues by checking identifier
+    switch (e.type) {
+      case "blur":
+        break;
+      case "focus":
+        // Update title (asterisk) notification
+        var channel = Modules.client.channels.current.get();
+        document.title = channel + " | Burning Board";
+        break;
+    }
+  }
+  $(this).data("prevType", e.type); // reset identifier
+});
+
 // User momentjs for date format
 Template.registerHelper(
   'formatDate', function(date) {

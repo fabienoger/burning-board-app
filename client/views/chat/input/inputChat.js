@@ -6,7 +6,6 @@ Template.inputChat.events({
   // Update title (asterisk) notification
   'focus #message-input': function (e, t) {
     var channel = Modules.client.channels.current.get();
-    document.title = channel + " | Burning Board";
   },
   // Display emojione panel
   'keyup #message-input': function (e, t) {
