@@ -4,6 +4,14 @@ Template.registerHelper(
     return moment(date).format('DD/MM/YYYY - HH:mm:ss');
   }
 );
+
+// Not equal
+Template.registerHelper(
+  'notEqual', function (string1, string2) {
+    return string1 !== string2;
+  }
+);
+
 // For date for message
 Template.registerHelper(
   'messageDate', function(date) {
@@ -11,8 +19,8 @@ Template.registerHelper(
   }
 );
 
+// Return the generateUserNameInfo ReactiveVar (get)
 Template.registerHelper(
-  // Return the generateUserNameInfo ReactiveVar (get)
   'getUserNameInfo', function() {
     return Modules.both.generateUserNameInfo.get() || false;
   }
