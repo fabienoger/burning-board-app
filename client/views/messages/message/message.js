@@ -1,4 +1,14 @@
 /********************
+      OnRENDERED
+********************/
+
+Template.message.onRendered(function() {
+  // Update title (asterisk) notification
+  var channel = Modules.client.channels.current.get();
+  document.title = "* " + channel + " | Burning Board";
+});
+
+/********************
        HELPERS
 ********************/
 
