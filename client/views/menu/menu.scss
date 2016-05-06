@@ -27,22 +27,28 @@ header {
     left: 0px;
     display: block;
 
-    div#button-close-menu {
-      z-index: 20;
-      cursor: pointer;
-      position: fixed;
-      right: 0px;
-      line-height: 50px;
+    div.wrapper-close-menu {
+      position: absolute;
+      right: 0;
       width: 50px;
-      color: #FFF;
-      text-align: center;
-      transition: all .25s;
-      display: none;
-      background-color: $p-color;
+      height: 50px;
 
-      &:hover {
-        color: $p-color;
-        background-color: #FFF;
+      div#button-close-menu {
+        z-index: 20;
+        cursor: pointer;
+        position: fixed;
+        line-height: 50px;
+        width: 50px;
+        color: #FFF;
+        text-align: center;
+        transition: all .25s;
+        display: none;
+        background-color: $p-color;
+
+        &:hover {
+          color: $p-color;
+          background-color: #FFF;
+        }
       }
     }
     &::-webkit-scrollbar-thumb {
