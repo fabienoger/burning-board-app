@@ -30,7 +30,7 @@ header {
     div#button-close-menu {
       z-index: 20;
       cursor: pointer;
-      position: absolute;
+      position: fixed;
       right: 0px;
       line-height: 50px;
       width: 50px;
