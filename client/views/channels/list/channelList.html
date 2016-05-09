@@ -21,7 +21,10 @@
       <i class="icon plus square outline large"></i>
     </div>
     <div class="content">
-      {{#each channels}}
+      {{#each privateChannels}}
+        {{> channel name=name }}
+      {{/each}}
+      {{#each publicChannels}}
         {{> channel name=name }}
       {{/each}}
     </div>

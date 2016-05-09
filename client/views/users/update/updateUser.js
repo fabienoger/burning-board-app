@@ -20,8 +20,8 @@ Template.updateUser.events({
         Meteor.call("upsertUser", selectedUser._id, {
           $set: {
             "emails.0.address": newEmail.value.trim(),
-            "profile.newAdmin": newAdmin.checked,
-            "profile.newSuperAdmin": newSuperAdmin.checked
+            "profile.admin": newAdmin.checked,
+            "profile.superAdmin": newSuperAdmin.checked
           }
         }, function(error, result) {
           if (error) {

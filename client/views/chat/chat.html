@@ -5,7 +5,20 @@
         {{> messages}}
       </div>
       <div class="input-wrapper">
-        {{> inputChat}}
+        {{#if userIsMember }}
+          {{> inputChat}}
+        {{ else }}
+          <div class="join-chat">
+            <span class="text">
+              You are viewing a preview of
+              <span class="channel-name"> #{{ getChannelName }}</span>
+            </span>
+            <button class="ui labeled icon button primary-color" id="joinChat">
+              <i class="icon share"></i>
+              Join Channel
+            </button>
+          </div>
+        {{/if}}
       </div>
     </div>
   {{else}}

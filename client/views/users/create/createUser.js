@@ -34,6 +34,7 @@ Template.createUser.events({
             email: email.value.trim(),
             password: password.value.trim(),
             profile: {
+              active: true,
               admin: admin.checked,
               superAdmin: superAdmin.checked,
               changeUserName: false,
