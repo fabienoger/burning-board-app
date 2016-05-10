@@ -8,4 +8,13 @@ div.messages {
   top: 0;
   padding-bottom: 0px;
   overflow-x: hidden;
+
+  div.ui.loader {
+    color: #FFF;
+    font-size: 1.2em;
+
+    i.icon.circular.inverted.primary-color {
+      background-color: $p-color !important;
+    }
+  }
 }

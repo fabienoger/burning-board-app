@@ -5,7 +5,7 @@
 Template.createChannel.onRendered(function() {
   // Initialize ui elements
   $('select.dropdown').dropdown();
-  $('.ui.checkbox').checkbox();
+  $('.ui.checkbox').checkbox("set checked");
 });
 
 /********************
@@ -57,7 +57,7 @@ Template.createChannel.events({
             // Close modal
             $(".create-channel.ui.small.modal").modal("hide");
             // Redirect to new channel
-            FlowRouter.go("/" + channel.name);
+            FlowRouter.go("/channels/" + channel.name);
             // Display success message
             Modules.client.utils.displayPanel("message-info", "positive", "checkmark", "# " + channel.name + " channel successfully created!");
           }

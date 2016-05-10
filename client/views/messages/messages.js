@@ -21,6 +21,18 @@ Template.messages.onCreated(function() {
 ********************/
 
 Template.messages.helpers({
+  // Return true if user is member of this channel
+  userIsMember: function() {
+    // Intialize variables
+    var channelName = Modules.client.channels.current.get();
+    var channel = Channels.findOne({name: channelName});
+
+    if (_.contains(channel.members, Meteor.userId())) {
+      return true;
+    } else {
+      return false;
+    }
+  },
   // Return messages
   getMessages: function() {
     Modules.client.messages.messages.set(Messages.find({}).fetch());

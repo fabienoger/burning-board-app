@@ -33,15 +33,23 @@ Meteor.startup(function() {
   }
   // Create defaults Channels
   if (Channels.find().fetch().length < 2) {
+    // Get members and build array of Ids
+    var members = Meteor.users.find().fetch();
+    var membersId = [];
+    _.each(members, function(member) {
+      membersId.push(member._id);
+    });
+
+    console.log(membersId);
     var channels = [{
         name: "general",
-        members: [],
+        members: membersId,
         public: true,
         createdBy: "",
         createdAt: new Date()
       }, {
         name: "random",
-        members: "",
+        members: membersId,
         public: true,
         createdBy: "",
         createdAt: new Date()

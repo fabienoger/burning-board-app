@@ -15,6 +15,13 @@ Meteor.methods({
       return 0;
     }
   },
+  // upsert Channel by Id
+  upsertChannel: function(id, doc) {
+    console.log("upsertChannel");
+    console.log("id: ", id);
+    console.log("doc ", doc);
+    return Channels.upsert({_id: id}, doc)
+  },
 /**********************
 *       FeedBacks
 */

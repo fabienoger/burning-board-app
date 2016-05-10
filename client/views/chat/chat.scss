@@ -21,5 +21,25 @@ div.chat {
     padding-left: 16rem;
     background-color: #FFF;
     border-top: 2px solid $grey;
+
+    div.join-chat {
+      text-align: center;
+
+      span.text {
+        font-size: 1.2em;
+
+        span.channel-name {
+          font-weight: bold;
+        }
+      }
+      button.ui.button.labeled.icon {
+        margin-left: 15px;
+
+        &:hover {
+          background-color: $clear-grey;
+          color: $p-color;
+        }
+      }
+    }
   }
 }

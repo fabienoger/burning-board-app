@@ -32,7 +32,7 @@ div#message-info {
   position: fixed;
   width: 100%;
   padding-bottom: 0;
-  padding-right: 16rem;
+  padding-right: 15rem;
 }
 div.message-wrapper {
   position: relative;
@@ -42,7 +42,7 @@ div.message-wrapper {
 }
 
 // Remove radius for UI items
-.ui.button, div.card, input, .ui.label, .ui.accordion, .ui.segment, .ui.message, div.menu, textarea, .ui.header, .ui.modal {
+.ui.button, div.card, input, .ui.label, .ui.accordion, .ui.segment, .ui.message, div.menu, textarea, .ui.header, .ui.modal, .ui.dropdown {
   border-radius: 0px !important;
 }
 
@@ -83,3 +83,13 @@ div.message-wrapper {
   width: 1em;
   height: 1em;
 }
+// Responsive
+@media (max-width: 767px) {
+  div#message-info {
+    padding-right: 0;
+    z-index: 15;
+  }
+  div.message-wrapper {
+  }
+}
+

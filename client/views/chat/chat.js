@@ -23,6 +23,30 @@ Template.chat.onRendered(function() {
 ********************/
 
 Template.chat.events({
+  // Add currentUser to the chat
+  'click #joinChat': function(e, t) {
+    // Get channel
+    var channelName = Modules.client.channels.current.get();
+    var channel = Channels.findOne({name: channelName});
+    var channelOwner = Meteor.users.findOne({_id: channel.createdBy});
+
+    // Check is channel isn't empty
+    if (channel) {
+      if (channel.public) {
+        var doc = {$push: {members: Meteor.userId()}};
+        Meteor.call("upsertChannel", channel._id, doc, function(err, result) {
+          if (err) {
+            console.error("upsertChannel", err);
+          } else {
+            
+          }
+        });
+      } else {
+        // Display success message
+        Modules.client.utils.displayPanel("message-info", "negative", "warning sign", "It's private channel ! Please contact the channel owner : @" + channelOwner.profile.username + ".");
+      }
+    }
+  }
 });
 
 /********************
@@ -30,6 +54,22 @@ Template.chat.events({
 ********************/
 
 Template.chat.helpers({
+  // Return true if user is member of this channel
+  userIsMember: function() {
+    // Intialize variables
+    var channelName = Modules.client.channels.current.get();
+    var channel = Channels.findOne({name: channelName});
+
+    if (_.contains(channel.members, Meteor.userId())) {
+      return true;
+    } else {
+      return false;
+    }
+  },
+  // Return channel name
+  getChannelName: function() {
+    return Modules.client.channels.current.get();
+  },
   // Return the user with the given _id
   getUser: function(userId) {
     return Meteor.users.findOne({_id: userId});
