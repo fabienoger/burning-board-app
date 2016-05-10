@@ -60,10 +60,12 @@ Template.chat.helpers({
     var channelName = Modules.client.channels.current.get();
     var channel = Channels.findOne({name: channelName});
 
-    if (_.contains(channel.members, Meteor.userId())) {
-      return true;
-    } else {
-      return false;
+    if (channel.members) {
+      if (_.contains(channel.members, Meteor.userId())) {
+        return true;
+      } else {
+        return false;
+      }
     }
   },
   // Return channel name
