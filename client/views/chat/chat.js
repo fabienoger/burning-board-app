@@ -28,7 +28,7 @@ Template.chat.events({
     // Get channel
     var channelName = Modules.client.channels.current.get();
     var channel = Channels.findOne({name: channelName});
-    if (channel.createdBy) {
+    if (channel) {
       var channelOwner = Meteor.users.findOne({_id: channel.createdBy});
     }
 
