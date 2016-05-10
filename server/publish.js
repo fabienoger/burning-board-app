@@ -3,7 +3,7 @@ Meteor.publish('usernames', function() {
 });
 
 Meteor.publish('channel', function(channel) {
-  return Messages.find({channel: channel});
+  return Messages.find({channel: channel}, {sort: {createdAt: 1}});
 });
 
 Meteor.publish('feedBacks', function() {

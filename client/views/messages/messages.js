@@ -23,11 +23,12 @@ Template.messages.onCreated(function() {
 Template.messages.helpers({
   // Return messages
   getMessages: function() {
-    return Messages.find({}, {limit: 200}).fetch();
+    Modules.client.messages.messages.set(Messages.find({}).fetch());
+    return Modules.client.messages.messages.get() || false;
   },
   // Return true if is the same author to last message
   sameAuthor: function(index, userId) {
-    var messages = Messages.find({}, {limit: 200}).fetch();
+    var messages = Modules.client.messages.messages.get() || false;
     if (messages[index - 1]) {
       if (messages[index - 1].createdBy == userId) {
         return true;
