@@ -28,12 +28,11 @@ Template.chat.events({
     // Get channel
     var channelName = Modules.client.channels.current.get();
     var channel = Channels.findOne({name: channelName});
-    if (channel) {
-      var channelOwner = Meteor.users.findOne({_id: channel.createdBy});
-    }
+    console.log(channel);
 
     // Check is channel isn't empty
-    if (channel.public) {
+    if (channel) {
+      var channelOwner = Meteor.users.findOne({_id: channel.createdBy});
       var doc = {$push: {members: Meteor.userId()}};
       Meteor.call("upsertChannel", channel._id, doc, function(err, result) {
         if (err) {

@@ -2,6 +2,7 @@ Meteor.methods({
 /**********************
 *       Channels
 */
+
   // Create Channel
   createChannel: function(channel) {
     return Channels.insert(channel);
