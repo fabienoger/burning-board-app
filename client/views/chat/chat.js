@@ -28,23 +28,23 @@ Template.chat.events({
     // Get channel
     var channelName = Modules.client.channels.current.get();
     var channel = Channels.findOne({name: channelName});
-    var channelOwner = Meteor.users.findOne({_id: channel.createdBy});
+    if (channel.createdBy) {
+      var channelOwner = Meteor.users.findOne({_id: channel.createdBy});
+    }
 
     // Check is channel isn't empty
-    if (channel) {
-      if (channel.public) {
-        var doc = {$push: {members: Meteor.userId()}};
-        Meteor.call("upsertChannel", channel._id, doc, function(err, result) {
-          if (err) {
-            console.error("upsertChannel", err);
-          } else {
-            
-          }
-        });
-      } else {
-        // Display success message
-        Modules.client.utils.displayPanel("message-info", "negative", "warning sign", "It's private channel ! Please contact the channel owner : @" + channelOwner.profile.username + ".");
-      }
+    if (channel.public) {
+      var doc = {$push: {members: Meteor.userId()}};
+      Meteor.call("upsertChannel", channel._id, doc, function(err, result) {
+        if (err) {
+          console.error("upsertChannel", err);
+        } else {
+          
+        }
+      });
+    } else {
+      // Display success message
+      Modules.client.utils.displayPanel("message-info", "negative", "warning sign", "It's private channel ! Please contact the channel owner : @" + channelOwner.profile.username + ".");
     }
   }
 });
