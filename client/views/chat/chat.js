@@ -29,6 +29,9 @@ Template.chat.events({
     var channelName = Modules.client.channels.current.get();
     var channel = Channels.findOne({name: channelName});
     console.log(channel);
+    if (channel) {
+      var channelOwner = Meteor.users.findOne({_id: channel.createdBy});
+    }
 
     // Check is channel isn't empty
     if (channel) {
