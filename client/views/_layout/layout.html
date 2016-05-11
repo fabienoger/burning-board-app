@@ -7,7 +7,8 @@
 </head>
 <template name="layout">
   {{> Template.dynamic template=navbar }}
-  <main class="ui container-fluid">
+  {{> channelMembers }}
+  <main class="ui container-fluid pusher">
     <div class="message-wrapper" id="message-info"></div>
     {{#if getUserNameInfo}}
       <div class="message-wrapper">

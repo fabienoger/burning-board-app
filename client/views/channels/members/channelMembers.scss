@@ -1,0 +1,22 @@
+@import "{}/client/views/_layout/config";
+
+div.channel-members.sidebar.ui.inverted.vertical.menu.right {
+  div.ui.header {
+    transition: all .25s;
+    color: $clear-grey;
+    padding: 15px;
+    margin-bottom: 0;
+    background-color: $p-color;
+
+    &:hover {
+    }
+  }
+
+  div.item {
+    transition: all .25s;
+
+    &:hover {
+      background-color: $p-color;
+    }
+  }
+}

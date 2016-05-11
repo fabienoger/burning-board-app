@@ -23,6 +23,10 @@ Template.chat.onRendered(function() {
 ********************/
 
 Template.chat.events({
+  // Open sidebar
+  'click #show-members': function(e, t) {
+    $('.ui.sidebar.channel-members').sidebar('toggle');
+  },
   // Display modal
   'click #show-settings': function(e, t) {
     // Get channel
