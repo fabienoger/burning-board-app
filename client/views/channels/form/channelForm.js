@@ -118,7 +118,11 @@ Template.channelForm.helpers({
 
     // Check if channel is not empty
     if (channel) {
-      return Meteor.users.find({_id: {$nin: [Meteor.userId(), channel.createdBy]}}).fetch();
+      return Meteor.users.find({$and: [
+        {_id: {$nin: [Meteor.userId(), channel.createdBy]}},
+        {"profile.name": {$not: "Admin"}},
+        {"profile.name": {$not: "superAdmin"}}
+      ]}).fetch();
     }
     return Meteor.users.find({_id: {$ne: Meteor.userId()}}).fetch();
   },
