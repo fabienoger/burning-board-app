@@ -1,27 +1,57 @@
 <template name="chat">
   {{#if currentUser}}
-    <div class="chat">
-      <div class="chat-wrapper">
-        {{> messages}}
-      </div>
-      <div class="input-wrapper">
-        {{#if userIsMember }}
-          {{> inputChat}}
-        {{ else }}
-          <div class="join-chat">
-            <span class="text">
-              You are viewing a preview of
-              <span class="channel-name"> #{{ getChannelName }}</span>
-            </span>
-            <button class="ui labeled icon button primary-color" id="joinChat">
-              <i class="icon share"></i>
-              Join Channel
-            </button>
-          </div>
-        {{/if}}
-      </div>
+    <div class="channel-form-modal ui small modal">
+      <i class="icon close"></i>
+      {{>channelForm channel=getChannel }}
     </div>
+    {{#if getChannel}}
+      <div class="chat">
+        <div class="chat-wrapper">
+          {{#if userIsMember }}
+            <div class="channel-actions ui icon buttons">
+<!--
+              <div class="ui top left button" id="show-members">
+                <i class="icon users"></i>
+              </div>
+-->
+              {{#if channelOwner}}
+                <div class="ui top left button" id="show-settings">
+                  <i class="icon settings"></i>
+                </div>
+              {{ else }}
+              {{/if}}
+            </div>
+          {{/if}}
+          {{> messages}}
+        </div>
+        <div class="input-wrapper">
+          {{#if userIsMember }}
+            {{> inputChat}}
+          {{ else }}
+            <div class="join-chat">
+              <span class="text">
+                You are viewing a preview of
+                <span class="channel-name"> #{{ getChannelName }}</span>
+              </span>
+              <button class="ui labeled icon button primary-color" id="joinChat">
+                <i class="icon share"></i>
+                Join Channel
+              </button>
+            </div>
+          {{/if}}
+        </div>
+      </div>
+    {{ else }}
+      <div class="ui active large text loader">
+        <p>
+          <i class="icon sign warning"></i>
+          Sorry ! This channel does not exist
+          <i class="icon meh"></i>
+        </p>
+        Go to <a href="/channels/general">#general</a>
+      </div>
+    {{/if}}
   {{else}}
-    {{> login}}
+    <div class="ui active loader"></div>
   {{/if}}
 </template>

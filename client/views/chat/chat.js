@@ -23,30 +23,50 @@ Template.chat.onRendered(function() {
 ********************/
 
 Template.chat.events({
+  // Display modal
+  'click #show-settings': function(e, t) {
+    // Get channel
+    var channelName = Modules.client.channels.current.get();
+    var updatedChannel = Channels.findOne({name: channelName});
+    // Set channels.updated ReactiveVar
+    Modules.client.channels.updated.set(updatedChannel);
+    if (updatedChannel) {
+      // Render template
+    }
+    // Show channel form modal
+    $('.channel-form-modal.ui.modal').modal("show");
+  },
   // Add currentUser to the chat
   'click #joinChat': function(e, t) {
     // Get channel
     var channelName = Modules.client.channels.current.get();
     var channel = Channels.findOne({name: channelName});
-    console.log(channel);
-    if (channel) {
-      var channelOwner = Meteor.users.findOne({_id: channel.createdBy});
-    }
 
     // Check is channel isn't empty
     if (channel) {
-      var channelOwner = Meteor.users.findOne({_id: channel.createdBy});
-      var doc = {$push: {members: Meteor.userId()}};
-      Meteor.call("upsertChannel", channel._id, doc, function(err, result) {
-        if (err) {
-          console.error("upsertChannel", err);
-        } else {
-          
-        }
-      });
+      // Check if channel is public
+      if (channel.public || Meteor.user().profile.admin) {
+        // Initialize variables
+        var channelOwner = Meteor.users.findOne({_id: channel.createdBy});
+        var doc = {$push: {members: Meteor.userId()}};
+
+        // Call upsertChannel method
+        Meteor.call("upsertChannel", channel._id, doc, function(err, result) {
+          if (err) {
+            console.error("upsertChannel", err);
+            Modules.client.utils.displayPanel("message-info", "negative", "warning sign", "Oups ! Something went wrong ! <i class='icon meh'></i>");
+          } else {
+            // Display success message
+            Modules.client.utils.displayPanel("message-info", "positive", "checkmark", "Welcome to #" + channel.name + ".");
+          }
+        });
+      } else {
+        // Display error message
+        Modules.client.utils.displayPanel("message-info", "negative", "lock", "Sorry it's private channel ! <i class='icon meh'></i>");
+      }
     } else {
-      // Display success message
-      Modules.client.utils.displayPanel("message-info", "negative", "warning sign", "It's private channel ! Please contact the channel owner : @" + channelOwner.profile.username + ".");
+      // Display error message
+      Modules.client.utils.displayPanel("message-info", "negative", "warning sign", "Oups ! Something went wrong ! <i class='icon meh'></i>");
     }
   }
 });
@@ -56,19 +76,36 @@ Template.chat.events({
 ********************/
 
 Template.chat.helpers({
+  // Return true if the currentUser is the owner of channel or admin
+  channelOwner: function() {
+    // Intialize variables
+    var channelName = Modules.client.channels.current.get();
+    var channel = Channels.findOne({name: channelName});
+
+    if (channel.createdBy == Meteor.userId() || Meteor.user().profile.admin) {
+      return true;
+    } else {
+      return false;
+    }
+  },
   // Return true if user is member of this channel
   userIsMember: function() {
     // Intialize variables
     var channelName = Modules.client.channels.current.get();
     var channel = Channels.findOne({name: channelName});
 
-    if (channel.members) {
+    if (channel) {
       if (_.contains(channel.members, Meteor.userId())) {
         return true;
       } else {
         return false;
       }
     }
+  },
+  // Return channel object
+  getChannel: function() {
+    var channelName = Modules.client.channels.current.get();
+    return Channels.findOne({name: channelName}) || false;
   },
   // Return channel name
   getChannelName: function() {

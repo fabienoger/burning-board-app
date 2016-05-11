@@ -32,7 +32,7 @@ Meteor.startup(function() {
     });
   }
   // Create defaults Channels
-  if (Channels.find().fetch().length < 2) {
+  if (Channels.find().fetch().length < 1) {
     // Get members and build array of Ids
     var members = Meteor.users.find().fetch();
     var membersId = [];
@@ -40,22 +40,17 @@ Meteor.startup(function() {
       membersId.push(member._id);
     });
 
-    console.log(membersId);
-    var channels = [{
+    var channel = {
         name: "general",
         members: membersId,
         public: true,
         createdBy: "",
         createdAt: new Date()
-      }
-    ];
+      };
 
     // Insert Channels
-    console.log("Creating Channels [...]");
-    _.each(channels, function(channel) {
-      console.log(channel);
-      Channels.insert(channel);
-    });
+    console.log("Creating Channel #general [...]");
+    console.log(Channels.insert(channel));
   }
   // Create defaults usernames
   if (Usernames.find().fetch().length < 3) {

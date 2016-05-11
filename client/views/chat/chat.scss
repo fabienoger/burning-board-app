@@ -1,5 +1,14 @@
 @import "{}/client/views/_layout/config";
 
+div.ui.loader {
+  color: #FFF;
+  font-size: 1.2em;
+
+  i.icon.circular.inverted.primary-color {
+    background-color: $p-color !important;
+  }
+}
+
 div.chat {
   min-height: 100%;
   div.chat-wrapper {
@@ -9,6 +18,22 @@ div.chat {
     right: 0;
     top: 0;
     bottom: 67px;
+
+    div.channel-actions {
+      position: relative;
+      z-index: 300;
+      float: right;
+      div.ui.button {
+        transition: all .25s;
+        background-color: $p-color;
+        color: #FFF;
+
+        &:hover {
+          color: $p-color;
+          background-color: $clear-grey;
+        }
+      }
+    }
   }
 
   div.input-wrapper {
@@ -34,10 +59,11 @@ div.chat {
       }
       button.ui.button.labeled.icon {
         margin-left: 15px;
+        transition: all .25s;
 
         &:hover {
-          background-color: $clear-grey;
-          color: $p-color;
+          background-color: $clear-grey !important;
+          color: $p-color !important;
         }
       }
     }

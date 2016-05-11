@@ -1,0 +1,49 @@
+<template name="channelForm">
+  <h1 class="ui header">
+    {{#if channel }}
+      <i class="icon settings"></i>
+      Update #{{ channel.name }}
+    {{ else }}
+      <i class="icon plus"></i>
+      Create channel
+    {{/if }}
+  </h1>
+  <div class="channel-form content">
+    <form data-id="{{ channel._id }}" class="ui form channel-form">
+      <div class="message-wrapper" id="channelFormInfo"></div>
+      <div class="field">
+          <div class="ui segment">
+            <div class="ui toggle checkbox">
+              <input type="checkbox" tabindex="0" id="publicChannel" class="hidden" checked="{{ channel.public }}" />
+              <label>Public</label>
+            </div>
+          </div>
+        </div>
+      <div class="field">
+        <label for="nameChannel">Channel name : </label>
+        <input type="text" id="nameChannel" value="{{ channel.name }}" />
+      </div>
+      <div class="field">
+        <label>Invite members</label>
+        <select multiple="" class="ui dropdown search" id="membersChannel">
+          {{#each getUsersExceptCreator}}
+            {{#if ../channel }}
+              <option value="{{ _id }}" selected="{{#if isMember _id }}true{{/if}}">{{ profile.username }}</option>
+            {{ else }}
+              <option value="{{ _id }}">{{ profile.username }}</option>
+            {{/if}}
+          {{/each}}
+        </select>
+      </div>
+      <button type="submit" class="ui button green labeled icon">
+        {{#if channel }}
+          <i class="icon save"></i>
+          Save
+        {{ else }}
+          <i class="icon plus"></i>
+          Create
+        {{/if}}
+      </button>
+    </form>
+  </div>
+</template>

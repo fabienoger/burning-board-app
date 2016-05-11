@@ -24,7 +24,6 @@ Template.channel.events({
     $('.ui.basic.remove-channel.modal').modal({
       closable  : true,
       onDeny    : function(){
-        console.log("Deny");
         $('.ui.basic.remove-channel.modal').modal("hide");
         return false;
       },
@@ -39,7 +38,6 @@ Template.channel.events({
                 console.err("removeChannel ", err);
               } else {
                 // Display information message
-                  console.log(result);
                 if (result != 0) {
                   Modules.client.utils.displayPanel("message-info", "positive", "checkmark", "Channel was successfully removed ! <i class='icon smile'></i>");
                 } else {

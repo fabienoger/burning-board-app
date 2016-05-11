@@ -5,7 +5,25 @@ Meteor.methods({
 
   // Create Channel
   createChannel: function(channel) {
-    return Channels.insert(channel);
+    // Server validation
+    if (channel) {
+      // Check all properties of channel
+      if (channel.name && channel.createdBy && channel.members
+         && channel.createdAt) {
+        // Find & Check if Channel name is not already taken
+        var searchChannel = Channels.findOne({name: channel.name});
+        if (!searchChannel) {
+          // Insert channel
+          return Channels.insert(channel);
+        }
+        throw new Meteor.Error("channel-name-exist", "Channel name already exists.");
+        return;
+      }
+      throw new Meteor.Error("invalid-object", "Channel object is incomplete.");
+      return;
+    }
+    throw new Meteor.Error("invalid-object", "Channel object is incomplete.");
+    return;
   },
   // Remove Channel by name
   removeChannel: function(channel) {

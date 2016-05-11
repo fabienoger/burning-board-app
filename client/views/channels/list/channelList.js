@@ -17,9 +17,14 @@ Template.channelList.events({
 Template.channelList.helpers({
   // Return all channels
   privateChannels: function() {
+    if (Meteor.user().profile.admin) {
+      return Channels.find({$and: [
+        {public: false}
+      ]}).fetch();
+    }
     return Channels.find({$and: [
       {public: false},
-      {"members": {$in: [Meteor.userId()]}}
+      {members: {$in: [Meteor.userId()]}}
     ]}).fetch();
   },
   // Return all public channels
