@@ -59,6 +59,8 @@ Template.channelForm.events({
             if (result.numberAffected == 1) {
               // Close modal
               $(".channel-form-modal.ui.modal").modal("hide");
+              // Redirect
+              FlowRouter.go("/channels/" + updatedChannel.name);
               // Display success message
               Modules.client.utils.displayPanel("message-info", "positive", "checkmark", "# " + updatedChannel.name + " channel successfully updated !");
             }
