@@ -4,14 +4,19 @@ Template.generateUserNames.events({
     Meteor.call("cleanBeforeGenerate", function(err, results) {
       if (err) {
         console.error("cleanBedoreGenerate", err);
+        // Display message
+        Modules.client.utils.displayPanel("message-info", "negative", "checkmark", "Oups ! Something went wrong.");
       } else {
-        console.log("Results ", results);
         Meteor.call("generateUserNames", function(err, result) {
           if (err) {
             console.error("generateUserNames", err);
+            // Display message
+            Modules.client.utils.displayPanel("message-info", "negative", "checkmark", "Oups ! Something went wrong.");
           } else {
-            console.log("result ", result);
-            
+            // Close modal
+            $('.ui.small.modal.generate-username-modal').modal('hide');
+            // Display message
+            Modules.client.utils.displayPanel("message-info", "positive", "checkmark", "Usernames have been successfully generated !");
           }
         });
       }

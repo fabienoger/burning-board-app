@@ -32,7 +32,6 @@ Template.contentCreateUserName.events({
         Modules.client.utils.displayPanel("create-username-info", "negative", "warning", "Username field is required !");
       }
     } else {
-      console.log("UserName already exist !");
       Modules.client.utils.displayPanel("create-username-info", "negative", "meh", "Username already exist !");
     }
   }
