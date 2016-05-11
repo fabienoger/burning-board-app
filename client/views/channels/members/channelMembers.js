@@ -23,9 +23,11 @@ Template.channelMembers.helpers({
       // Browse channel.members[] and push users to Array
       _.each(channel.members, function(id) {
         var user = Meteor.users.findOne({_id: id});
-        // Check if user is Online
-        if (user.status.online) {
-          members.push(user);
+        if (user) {
+          // Check if user is Online
+          if (user.status.online) {
+            members.push(user);
+          }
         }
       });
     }
