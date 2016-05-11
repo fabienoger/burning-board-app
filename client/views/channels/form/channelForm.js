@@ -121,7 +121,7 @@ Template.channelForm.helpers({
       return Meteor.users.find({$and: [
         {_id: {$nin: [Meteor.userId(), channel.createdBy]}},
         {"profile.name": {$not: "Admin"}},
-        {"profile.name": {$not: "superAdmin"}}
+        {"profile.name": {$not: "Super Admin"}}
       ]}).fetch();
     }
     return Meteor.users.find({_id: {$ne: Meteor.userId()}}).fetch();
