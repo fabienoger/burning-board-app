@@ -23,6 +23,7 @@ Template.register.events({
               username: "",
               active: true,
               changeUserName: true,
+              superAdmin: false,
               admin: false
             }
           }; //,geolocation:{lat: geoloc.lat, lng: geoloc.lng}

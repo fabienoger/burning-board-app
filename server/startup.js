@@ -47,12 +47,6 @@ Meteor.startup(function() {
         public: true,
         createdBy: "",
         createdAt: new Date()
-      }, {
-        name: "random",
-        members: membersId,
-        public: true,
-        createdBy: "",
-        createdAt: new Date()
       }
     ];
 
