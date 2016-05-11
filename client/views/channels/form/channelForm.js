@@ -28,7 +28,7 @@ Template.channelForm.events({
     var selectedMembers = [];
     // Add currentUser and creator to members
     selectedMembers.push(Meteor.userId());
-    if (updatedChannel) {
+    if (updatedChannel && updatedChannel.createdBy != Meteor.userId()) {
       selectedMembers.push(updatedChannel.createdBy);
     }
     _.each(membersChannel.options, function(member) {
