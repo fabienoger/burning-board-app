@@ -55,7 +55,12 @@ Template.channelMembers.helpers({
       // Browse channel.members[] and push users to Array
       _.each(channel.members, function(id) {
         var user = Meteor.users.findOne({_id: id});
-        members.push(user);
+        if (user) {
+          // Filter Admin & Super Admin
+          if (user.profile.name != "Admin" && user.profile.name != "Super Admin") {
+            members.push(user);
+          }
+        }
       });
     }
     return members;

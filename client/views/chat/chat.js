@@ -25,7 +25,11 @@ Template.chat.onRendered(function() {
 Template.chat.events({
   // Open sidebar
   'click #show-members': function(e, t) {
-    $('.ui.sidebar.channel-members').sidebar('toggle');
+    $('.ui.sidebar.channel-members').sidebar({
+      dimPage: false,
+      closable: true
+    });
+    $('.ui.sidebar.channel-members').sidebar('setting', 'transition', 'overlay').sidebar('toggle');
   },
   // Display modal
   'click #show-settings': function(e, t) {
