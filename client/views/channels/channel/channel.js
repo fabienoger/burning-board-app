@@ -17,7 +17,7 @@ Template.channel.onRendered(function() {
 Template.channel.events({
   // Set current Channel ReactiveVar
   'click .channel': function(e, t) {
-    Modules.client.channels.current.set(this.name);
+    Modules.client.channels.current.set(this.channel.name);
   },
   // Open modal for confirm remove channel
   'click .remove-channel': function(e, t) {
@@ -71,7 +71,7 @@ Template.channel.helpers({
   // Return active if currentChannel is equal to this channel
   active: function() {
     var currentChannel = Modules.client.channels.current.get();
-    if (currentChannel == this.name) {
+    if (currentChannel == this.channel.name) {
       return "active";
     } else {
       return "";
