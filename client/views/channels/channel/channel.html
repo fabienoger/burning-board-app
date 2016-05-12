@@ -1,6 +1,10 @@
 <template name="channel">
   <a href="/channels/{{name}}" class="channel {{active}}">
-    <span class="prefix">#</span>
+    {{#if public}}
+      <span class="prefix">#</span>
+    {{ else }}
+      <span class="icon lock"></i>
+    {{/if}}
     <span class="channel-name">{{ name }}</span>
     {{#if iCanRemove}}
       <i data-channelname="{{ name }}" class="icon remove remove-channel red"></i>
