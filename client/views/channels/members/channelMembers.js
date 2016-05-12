@@ -22,7 +22,11 @@ Template.channelMembers.helpers({
     if (channel) {
       // Browse channel.members[] and push users to Array
       _.each(channel.members, function(id) {
-        var user = Meteor.users.findOne({_id: id});
+        var user = Meteor.users.findOne({$and: [
+          {_id: id},
+          {"profile.name": {$not: "Super Admin"}},
+          {"profile.name": {$not: "Admin"}}
+        ]});
         if (user) {
           // Check if user is Online
           if (user.status.online) {
@@ -38,10 +42,23 @@ Template.channelMembers.helpers({
     // Get channel
     var channelName = Modules.client.channels.current.get();
     var channel = Channels.findOne({name: channelName});
+    var members = [];
+
     if (channel) {
-      return channel.members.length;
+        // Browse channel.members[] and push users to Array
+      _.each(channel.members, function(id) {
+        var user = Meteor.users.findOne({$and: [
+          {_id: id},
+          {"profile.name": {$not: "Super Admin"}},
+          {"profile.name": {$not: "Admin"}}
+        ]});
+        // Check if user is not empty
+        if (user) {
+          members.push(user);
+        }
+      });
     }
-    return 0;
+    return members.length;
   },
   // Return members of channel
   getChannelMembers: function() {

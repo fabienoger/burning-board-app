@@ -11,11 +11,7 @@ Meteor.publish('feedBacks', function() {
 });
 
 Meteor.publish('users', function() {
-  return Meteor.users.find({$and: [
-    {"profile.superAdmin": false},
-    {"profile.name": {$not: "Super Admin"}},
-    {"profile.name": {$not: "Admin"}}
-  ]});
+  return Meteor.users.find({"profile.superAdmin": false});
 });
 
 Meteor.publish("userStatus", function() {
