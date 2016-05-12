@@ -59,13 +59,14 @@ Template.channel.events({
 Template.channel.helpers({
   // Return true if currentUser is authorized to remove this channel
   iCanRemove: function() {
-    var channel = Channels.findOne({name: this.name});
-    if (Meteor.userId() == channel.createdBy || Meteor.user().profile.admin
-      && channel.name != "random" && channel.name != "general") {
-      return true;
-    } else {
-      return false;
+    var channel = Channels.findOne({name: this.channel.name});
+    if (channel) {
+      if (Meteor.userId() == channel.createdBy || Meteor.user().profile.admin
+        && channel.name != "random" && channel.name != "general") {
+        return true;
+      }
     }
+    return false;
   },
   // Return active if currentChannel is equal to this channel
   active: function() {
