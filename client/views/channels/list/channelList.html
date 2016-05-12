@@ -22,10 +22,10 @@
     </div>
     <div class="content">
       {{#each privateChannels}}
-        {{> channel name=name }}
+        {{> channel channel=. }}
       {{/each}}
       {{#each publicChannels}}
-        {{> channel name=name }}
+        {{> channel channel=. }}
       {{/each}}
     </div>
   </div>
