@@ -21,15 +21,16 @@ Template.connectedUsers.helpers({
         {"status.online": false}
       ]
     }).fetch();
-    // Set countOnlineUsers & countOfflineUsers ReactiveVar
+    // Set countOnlineUsers ReactiveVar
     Modules.client.user.countOnlineUsers.set(users.length);
-    Modules.client.user.countUsers.set(offlineUsers.length);
 
     console.log(users);
     // Add each offlineUser to users
     _.map(offlineUsers, function(offlineUser) {
       users.push(offlineUser);
     });
+    // Set countUsers ReactiveVar
+    Modules.client.user.countUsers.set(users.length);
     return users;
   },
   // Return countUsers ReactiveVar (get)
