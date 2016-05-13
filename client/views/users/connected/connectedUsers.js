@@ -23,7 +23,7 @@ Template.connectedUsers.helpers({
     }).fetch();
     // Set countOnlineUsers & countOfflineUsers ReactiveVar
     Modules.client.user.countOnlineUsers.set(users.length);
-    Modules.client.user.countOfflineUsers.set(offlineUsers.length);
+    Modules.client.user.countUsers.set(offlineUsers.length);
 
     console.log(users);
     // Add each offlineUser to users
@@ -32,9 +32,9 @@ Template.connectedUsers.helpers({
     });
     return users;
   },
-  // Return countOfflineUsers ReactiveVar (get)
-  countOfflineUsers: function() {
-    return Modules.client.user.countOfflineUsers.get() || false;
+  // Return countUsers ReactiveVar (get)
+  countUsers: function() {
+    return Modules.client.user.countUsers.get() || false;
   },
   // Return countOnlineUsers ReactiveVar (get)
   countOnlineUsers: function() {
