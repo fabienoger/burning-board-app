@@ -23,7 +23,7 @@ header {
     background-color: $background;
     z-index: 100;
     top: 0;
-    bottom: 67px;
+    bottom: 0;
     left: 0;
     max-height: 100%;
     width: 15rem;
@@ -131,5 +131,6 @@ header {
   }
   header div.ui.vertical.inverted.menu#navbar {
     left: -260px;
+    bottom: 67px;
   }
 }
