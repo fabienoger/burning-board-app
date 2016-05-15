@@ -1,7 +1,6 @@
 @import "{}/client/views/_layout/config";
 
 header {
-
   div#button-open-menu {
     z-index: 10;
     cursor: pointer;
@@ -19,13 +18,17 @@ header {
       background-color: transparent;
     }
   }
-  div.ui.menu#navbar {
-    overflow-y: auto;
-    overflow-x: visible;
-    height: 100%;
-    box-shadow: $p-color 2px 0 2px !important;
-    left: 0px;
-    display: block;
+  div#navbar.ui.inverted.vertical.menu {
+    position: fixed;
+    background-color: $background;
+    z-index: 100;
+    top: 0;
+    bottom: 67px;
+    left: 0;
+    max-height: 100%;
+    width: 15rem;
+    overflow-y: auto !important;
+    margin: 0 !important;
 
     div.wrapper-close-menu {
       position: absolute;
@@ -75,7 +78,7 @@ header {
     }
     a.item.logo {
       img {
-        width: 100px;
+        width: 100px !important;
         margin-left: auto;
         margin-right: auto;
       }
@@ -126,7 +129,7 @@ header {
   #button-close-menu, #button-open-menu {
     display: block !important;
   }
-  header div.ui.menu#navbar {
+  header div.ui.vertical.inverted.menu#navbar {
     left: -260px;
   }
 }
