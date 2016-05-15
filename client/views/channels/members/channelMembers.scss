@@ -9,6 +9,7 @@ div.channel-members {
   max-height: 100%;
   z-index: 102;
   width: 15rem;
+  overflow-y: auto !important;
   margin: 0 !important;
 
   div.header {
