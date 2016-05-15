@@ -24,7 +24,7 @@
           <i class="icon large close"></i>
         </div>
       </div>
-      <a href="/channels/general" class="item logo">
+      <a href="/channels/general" class="item logo closeOnClick">
         <img class="ui circular image" src="/images/burning_keyboard.png">
       </a>
 <!--
@@ -36,7 +36,7 @@
       </div>
 -->
       {{#if currentUser}}
-        <a class="item" id="editUser" href="/editUser">
+        <a class="item closeOnClick" id="editUser" href="/editUser">
           <i class="icon user"></i>
           {{ currentUser.profile.username }}
         </a>
@@ -61,17 +61,17 @@
               Users
             </div>
             <div class="content">
-              <a class="item" id="newUser" href="/users/new">
+              <a class="item closeOnClick" id="newUser" href="/users/new">
                 <i class="icon user add"></i>
                 New User
               </a>
-              <a class="item" href="/users">
+              <a class="item closeOnClick" href="/users">
                 <i class="icon users"></i>
                 User List
               </a>
             </div>
           </div>
-          <a class="item" id="feedBacks" href="/feedbacks">
+          <a class="item closeOnClick" id="feedBacks" href="/feedbacks">
             <i class="icon bug"></i>
             FeedBacks
           </a>

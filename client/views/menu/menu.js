@@ -15,6 +15,10 @@ Template.menu.onRendered(function() {
 *********************/
 
 Template.menu.events({
+  // Close menu
+  'click .closeOnClick': function(e, t) {
+    Modules.client.utils.toggleMenu();
+  },
   // Open / Close menu (toggle)
   'click #button-open-menu, click #button-close-menu': function(e, t) {
     Modules.client.utils.toggleMenu();

@@ -15,6 +15,10 @@ Template.channel.onRendered(function() {
 ********************/
 
 Template.channel.events({
+  // Close menu
+  'click .closeOnClick': function(e, t) {
+    Modules.client.utils.toggleMenu();
+  },
   // Set current Channel ReactiveVar
   'click .channel': function(e, t) {
     Modules.client.channels.current.set(this.channel.name);

@@ -1,5 +1,5 @@
 <template name="channel">
-  <a href="/channels/{{ channel.name}}" class="channel {{active}}">
+  <a href="/channels/{{ channel.name}}" class="channel closeOnClick {{active}}">
     {{#if channel.public}}
       <span class="prefix">#</span>
     {{ else }}
