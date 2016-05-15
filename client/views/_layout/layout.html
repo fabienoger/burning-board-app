@@ -8,39 +8,37 @@
 <template name="layout">
   {{> Template.dynamic template=navbar }}
   {{> channelMembers }}
-  <body>
-    <main class="ui container-fluid">
-      <div class="message-wrapper" id="message-info"></div>
-      {{#if getUserNameInfo}}
-        <div class="message-wrapper">
-          <div class="ui floating message info">
-            <i class="close icon"></i>
-            <div>
-              <i class="icon flag"></i>
-              {{getUserNameInfo}}
-            </div>
+  <main class="ui container-fluid">
+    <div class="message-wrapper" id="message-info"></div>
+    {{#if getUserNameInfo}}
+      <div class="message-wrapper">
+        <div class="ui floating message info">
+          <i class="close icon"></i>
+          <div>
+            <i class="icon flag"></i>
+            {{getUserNameInfo}}
           </div>
         </div>
-      {{/if}}
-      <div class="ui container">
-        {{#unless currentUser}}
-          <div class="wrapper-info">
-            <div class="ui positive message">
-              <i class="close icon"></i>
-              <div class="header">
-                <i class="icon smile"></i>
-                Welcome to Burning Board !
-              </div>
-              <ul class="list">
-                <li>Join us for discover this app ! <a href="/register">Sign Up</a></li>
-                <li>Help me and let your feedback !</li>
-              </ul>
-            </div>
-          </div>
-        {{/unless}}
-        {{> createUserName}}
-        {{> Template.dynamic template=main }}
       </div>
-    </main>
-  </body>
+    {{/if}}
+    <div class="ui container">
+      {{#unless currentUser}}
+        <div class="wrapper-info">
+          <div class="ui positive message">
+            <i class="close icon"></i>
+            <div class="header">
+              <i class="icon smile"></i>
+              Welcome to Burning Board !
+            </div>
+            <ul class="list">
+              <li>Join us for discover this app ! <a href="/register">Sign Up</a></li>
+              <li>Help me and let your feedback !</li>
+            </ul>
+          </div>
+        </div>
+      {{/unless}}
+      {{> createUserName}}
+      {{> Template.dynamic template=main }}
+    </div>
+  </main>
 </template>
