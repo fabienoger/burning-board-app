@@ -25,11 +25,8 @@ Template.chat.onRendered(function() {
 Template.chat.events({
   // Open sidebar
   'click #show-members': function(e, t) {
-    $('.ui.sidebar.channel-members').sidebar({
-      dimPage: false,
-      closable: true
-    });
-    $('.ui.sidebar.channel-members').sidebar('setting', 'transition', 'overlay').sidebar('toggle');
+    // Call toggle function
+    Modules.client.utils.toggleMembers();
   },
   // Display modal
   'click #show-settings': function(e, t) {
@@ -38,9 +35,6 @@ Template.chat.events({
     var updatedChannel = Channels.findOne({name: channelName});
     // Set channels.updated ReactiveVar
     Modules.client.channels.updated.set(updatedChannel);
-    if (updatedChannel) {
-      // Render template
-    }
     // Show channel form modal
     $('.channel-form-modal.ui.modal').modal("show");
   },

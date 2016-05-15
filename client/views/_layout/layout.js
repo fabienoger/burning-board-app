@@ -2,7 +2,7 @@
 
 Template.layout.events({
   // Update title (asterisk) notification
-  'click #__blaze-root': function (e, t) {
+  'click body': function (e, t) {
     var channel = Modules.client.channels.current.get();
     document.title = channel + " | Burning Board";
   }

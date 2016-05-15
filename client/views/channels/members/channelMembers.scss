@@ -1,7 +1,18 @@
 @import "{}/client/views/_layout/config";
 
-div.channel-members.sidebar.ui.inverted.vertical.menu.right {
-  div.ui.header {
+div.channel-members {
+  position: fixed;
+  background-color: $background;
+  top: 0;
+  right: -210px;
+  height: 100% !important;
+  max-height: 100%;
+  z-index: 102;
+  overflow-y: auto !important;
+  width: 15rem;
+  margin: 0 !important;
+
+  div.header {
     transition: all .25s;
     color: $clear-grey;
     padding: 15px;

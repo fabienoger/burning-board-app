@@ -1,4 +1,26 @@
 Modules.client.utils = {
+  // Toggle the right panel members
+  toggleMembers: function() {
+    // If right = 0 close panel
+    if ($("#channel-members").css("right") == "0px") {
+      // Close panel
+      $("#channel-members").animate({
+        right: "-15rem"
+      }, 250);
+      $("#channel-actions").animate({
+        marginRight: "0rem"
+      }, 250);
+    } else {
+      // Open panel
+      $("#channel-members").animate({
+        right: "0"
+      }, 250);
+      $("#channel-actions").animate({
+        marginRight: "15rem"
+      }, 250);
+    }
+
+  },
   // Display Welcome message
   displayWelcomePanel: function() {
     // Get DOM element

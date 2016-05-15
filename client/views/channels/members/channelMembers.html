@@ -1,22 +1,24 @@
 <template name="channelMembers">
-  <div class="channel-members ui sidebar inverted vertical menu right">
-    <div class="ui header">
+  <div id="channel-members" class="channel-members ui vertical inverted menu">
+    <div class="header">
       <i class="icon users"></i>
       MEMBERS ({{getOnlineMemberCount}} / {{getMemberCount}})
     </div>
-    {{#each getChannelMembers}}
-      <div class="item">
-        {{#if status.online}}
-          <i class="icon circle green"></i>
-        {{ else }}
-          {{#if status.idle }}
-            <i class="icon spinner loading green"></i>
+    <div class="content">
+      {{#each getChannelMembers}}
+        <div class="item">
+          {{#if status.online}}
+            <i class="icon circle green"></i>
           {{ else }}
-            <i class="icon circle thin red"></i>
+            {{#if status.idle }}
+              <i class="icon spinner loading green"></i>
+            {{ else }}
+              <i class="icon circle thin red"></i>
+            {{/if}}
           {{/if}}
-        {{/if}}
-        {{ profile.username }}
-      </div>
-    {{/each}}
+          {{ profile.username }}
+        </div>
+      {{/each}}
+    </div>
   </div>
 </template>
