@@ -4,11 +4,10 @@ div.channel-members {
   position: fixed;
   background-color: $background;
   top: 0;
+  bottom: 67px;
   right: -210px;
-  height: 100% !important;
   max-height: 100%;
   z-index: 102;
-  overflow-y: auto !important;
   width: 15rem;
   margin: 0 !important;
 
