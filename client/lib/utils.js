@@ -1,17 +1,21 @@
 Modules.client.utils = {
   // Toggle the nav menu
   toggleMenu: function() {
-    // If left = 0 close menu
-    if ($("#navbar").css("left") == "0px") {
-      // Close menu
-      $("#navbar").animate({
-        left: "-15rem"
-      }, 250);
-    } else {
-      // Open menu
-      $("#navbar").animate({
-        left: "0"
-      }, 250);
+    var width = $(window).width();
+    // If width < 767px
+    if (width <= 650) {
+      // If left = 0 close menu
+      if ($("#navbar").css("left") == "0px") {
+        // Close menu
+        $("#navbar").animate({
+          left: "-15rem"
+        }, 250);
+      } else {
+        // Open menu
+        $("#navbar").animate({
+          left: "0"
+        }, 250);
+      }
     }
   },
   // Toggle the right panel members
