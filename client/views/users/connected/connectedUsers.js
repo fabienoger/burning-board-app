@@ -24,7 +24,6 @@ Template.connectedUsers.helpers({
     // Set countOnlineUsers ReactiveVar
     Modules.client.user.countOnlineUsers.set(users.length);
 
-    console.log(users);
     // Add each offlineUser to users
     _.map(offlineUsers, function(offlineUser) {
       users.push(offlineUser);
