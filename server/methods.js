@@ -117,7 +117,6 @@ Meteor.methods({
             Modules.both.generateUserNameInfo.set("UserNames have not been assigned.");
             Modules.both.emptyGUserNameInfo();
           } else {
-            console.log("upsertUser => ", result);
             // Call upsertUserName method
             Meteor.call("upsertUserName", randomUserName._id, {$set: {taken: true}}, function(err, result) {
               if (err) {
@@ -125,7 +124,6 @@ Meteor.methods({
                 Modules.both.generateUserNameInfo.set("UserNames have not been assigned.");
                 Modules.both.emptyGUserNameInfo();
               } else {
-                console.log("upsertUserName => ", result);
                 Modules.both.generateUserNameInfo.set("The UserNames were assigned.");
                 Modules.both.emptyGUserNameInfo();
               }
