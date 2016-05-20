@@ -3,8 +3,12 @@
 ********************/
 
 Template.channelForm.onRendered(function() {
-  $('.ui.checkbox').checkbox();
-  $('.ui.dropdown').checkbox();
+  Tracker.autorun(function() {
+    var channel = Modules.client.channels.updated.get();
+    // Initialize ui elements
+    $('.ui.checkbox').checkbox();
+    $('.ui.dropdown').dropdown("refresh");
+  });
 });
 
 /********************
