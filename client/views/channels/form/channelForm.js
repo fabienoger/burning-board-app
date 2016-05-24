@@ -87,6 +87,19 @@ Template.channelForm.events({
           Meteor.call("createChannel", channel, function(err, result) {
             if (err) {
               console.error("createChannel ", err);
+              if (err.error == "invalid-object") {
+                // Display success message
+                Modules.client.utils.displayPanel("channelFormInfo", "negative", "warning sign", "Something went wrong !");
+              } else if (err.error == "channel-name-to-long") {
+                // Display success message
+                Modules.client.utils.displayPanel("channelFormInfo", "negative", "warning sign", "Channel name is to long !");
+              } else if (err.error == "channel-name-exist") {
+                // Display success message
+                Modules.client.utils.displayPanel("channelFormInfo", "negative", "warning sign", "# " + findChannel.name + " channel already exists !");
+              } else {
+                // Display success message
+                Modules.client.utils.displayPanel("channelFormInfo", "negative", "warning sign", "Something went wrong !");
+              }
             } else {
               // Find the created Channel
               var channel = Channels.findOne({_id: result});

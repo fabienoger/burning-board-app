@@ -6,13 +6,18 @@ Meteor.methods({
       // Check all properties of channel
       if (channel.name && channel.createdBy && channel.members
          && channel.createdAt) {
-        // Find & Check if Channel name is not already taken
-        var searchChannel = Channels.findOne({name: channel.name});
-        if (!searchChannel) {
-          // Insert channel
-          return Channels.insert(channel);
+        // Check channel.name length is < 24 c
+        if (channel.name.length < 24) {
+          // Find & Check if Channel name is not already taken
+          var searchChannel = Channels.findOne({name: channel.name});
+          if (!searchChannel) {
+            // Insert channel
+            return Channels.insert(channel);
+          }
+          throw new Meteor.Error("channel-name-exist", "Channel name already exists.");
+          return;
         }
-        throw new Meteor.Error("channel-name-exist", "Channel name already exists.");
+        throw new Meteor.Error("channel-name-to-long", "Channel name is to long.");
         return;
       }
       throw new Meteor.Error("invalid-object", "Channel object is incomplete.");
