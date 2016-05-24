@@ -1,0 +1,40 @@
+Meteor.methods({
+  // Create Channel
+  createChannel: function(channel) {
+    // Server validation
+    if (channel) {
+      // Check all properties of channel
+      if (channel.name && channel.createdBy && channel.members
+         && channel.createdAt) {
+        // Find & Check if Channel name is not already taken
+        var searchChannel = Channels.findOne({name: channel.name});
+        if (!searchChannel) {
+          // Insert channel
+          return Channels.insert(channel);
+        }
+        throw new Meteor.Error("channel-name-exist", "Channel name already exists.");
+        return;
+      }
+      throw new Meteor.Error("invalid-object", "Channel object is incomplete.");
+      return;
+    }
+    throw new Meteor.Error("invalid-object", "Channel object is incomplete.");
+    return;
+  },
+  // Remove Channel by name
+  removeChannel: function(channel) {
+    // Check if channel name isn't "general" OR "random"
+    if (channel != "general" && channel != "random") {
+      return Channels.remove({name: channel});
+    } else {
+      return 0;
+    }
+  },
+  // upsert Channel by Id
+  upsertChannel: function(id, doc) {
+    console.log("upsertChannel");
+    console.log("id: ", id);
+    console.log("doc ", doc);
+    return Channels.upsert({_id: id}, doc)
+  },
+});
