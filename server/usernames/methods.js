@@ -15,6 +15,7 @@ Meteor.methods({
   },
   // Set UserNames.taken to false & Users.profile.changeUserName to true
   cleanBeforeGenerate: function() {
+    console.log("CleanBeforeGenerate [...]");
     var results = [];
     results.push(Usernames.upsert({}, {$set: {taken: false}}, {multi: true}));
     results.push(Meteor.users.upsert({}, {$set: {"profile.changeUserName": true}}, {multi: true}));
@@ -22,6 +23,7 @@ Meteor.methods({
   },
   // Generate and attribute userName to all users
   generateUserNames: function() {
+    console.log("Meteor.user() => ", Meteor.user());
     // Get UserNames and Users
     var userNames = Usernames.find({taken: false}).fetch();
     var users = Meteor.users.find({
@@ -33,6 +35,7 @@ Meteor.methods({
 
     // Check if userNames >= users
     if (userNames.length >= users.length) {
+      console.log("Generates UserNames [...]");
       _.each(users, function(user) {
         userNames = [];
         userNames = Usernames.find({taken: false}).fetch();
@@ -59,6 +62,7 @@ Meteor.methods({
           }
         });
       });
+      console.log("End Generates UserNames !");
     } else {
       console.log("generateUserNames() => Need more userNames");
     }
