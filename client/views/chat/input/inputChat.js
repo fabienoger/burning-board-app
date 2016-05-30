@@ -64,9 +64,8 @@ Template.inputChat.events({
       Meteor.call("insertMessage", message, function(error, result) {
         if (error) {
           console.error("insertMessage", error);
-          Modules.client.utils.displayPanel("message-info", "negative", "warning", "The message haven't been sent !");
+          sAlert.error(TAPi18n.__("something_went_wrong"));
         } else {
-          //Modules.client.utils.displayPanel("message-info", "positive", "warning", "The message has been sent.");
         }
         // Empty input
         $message.value = "";

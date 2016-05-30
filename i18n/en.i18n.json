@@ -9,10 +9,12 @@
   "select": "Select",
   "create": "Create",
   "see": "See",
+  "send": "Send",
   "update": "Update",
   "remove": "Remove",
   "save": "Save",
   "loading": "Loading",
+  "go_to": "Go to channel",
 
   // Form
   "password": "Password",
@@ -49,6 +51,14 @@
   "language_successfully_updated": "The user language has been sucessfully updated.",
   "user_already_exist": "The username already exist.",
   "user_inactive": "The user has been updated. Inactive account.",
+
+  // Chat
+
+
+  // Channels
+  "join_channel": "Join the channel",
+  "its_private_channel": "Sorry ! It's private channel.",
+  "welcome_channel": "Welcome to channel # %s",
 
   // Modals
   "are_you_sure": "Are you ABSOLUTELY sure ?",

@@ -56,19 +56,19 @@ Template.chat.events({
         Meteor.call("upsertChannel", channel._id, doc, function(err, result) {
           if (err) {
             console.error("upsertChannel", err);
-            Modules.client.utils.displayPanel("message-info", "negative", "warning sign", "Oups ! Something went wrong ! <i class='icon meh'></i>");
+            sAlert.warning(TAPi18n.__("something_went_wrong"));
           } else {
             // Display success message
-            Modules.client.utils.displayPanel("message-info", "positive", "checkmark", "Welcome to #" + channel.name + ".");
+            sAlert.success(TAPi18n.__("welcome_channel", channel.name));
           }
         });
       } else {
         // Display error message
-        Modules.client.utils.displayPanel("message-info", "negative", "lock", "Sorry it's private channel ! <i class='icon meh'></i>");
+        sAlert.info(TAPi18n.__("its_private_channel"));
       }
     } else {
       // Display error message
-      Modules.client.utils.displayPanel("message-info", "negative", "warning sign", "Oups ! Something went wrong ! <i class='icon meh'></i>");
+      sAlert.warning(TAPi18n.__("something_went_wrong"));
     }
   }
 });

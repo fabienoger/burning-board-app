@@ -9,10 +9,12 @@
   "select": "Sélectionner",
   "create": "Créer",
   "see": "Voir",
+  "send": "Envoyer",
   "update": "Mettre à jour",
   "remove": "Supprimer",
   "save": "Enregistrer",
   "loading": "Chargement",
+  "go_to": "Aller au salon",
 
   // Form
   "password": "Mot de passe",
@@ -49,6 +51,14 @@
   "language_successfully_updated": "Le language a été mis à jour avec succès.",
   "user_already_exist": "Le nom d'utilisateur existe déjà.",
   "user_inactive": "L'utilisateur à été mis à jour. Compte inactif.",
+
+  // Chat
+
+
+  // Channels
+  "join_channel": "Rejoindre le salon",
+  "its_private_channel": "Désolé ! Ce salon est privé.",
+  "welcome_channel": "Bienvenue dans le salon # %s",
 
   // Modals
   "are_you_sure": "Êtes-vous ABSOLUMENT sûr ?",

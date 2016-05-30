@@ -28,12 +28,12 @@
           {{ else }}
             <div class="join-chat">
               <span class="text">
-                Join the channel 
+                {{_ "join_channel" }}
                 <span class="channel-name"> #{{ getChannelName }}</span>
               </span>
               <button class="ui labeled icon button primary-color" id="joinChat">
                 <i class="icon share"></i>
-                Join Channel
+                {{_ "join_channel" }}
               </button>
             </div>
           {{/if}}
@@ -43,10 +43,10 @@
       <div class="ui active large text loader">
         <p>
           <i class="icon sign warning"></i>
-          Sorry ! This channel does not exist
+          {{_ "loading" }}
           <i class="icon meh"></i>
         </p>
-        Go to <a href="/channels/general">#general</a>
+        {{_ "go_to" }} <a href="/channels/general">#general</a>
       </div>
     {{/if}}
   {{else}}
