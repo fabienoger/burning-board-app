@@ -3,35 +3,35 @@
     <h1 class="ui header">
       <i class="icon user"></i>
       <div class="content">
-        My profile
+        {{_ "my_profile" }}
       </div>
     </h1>
     <div class="informations">
       <div class="body">
         <p class="valign-wrapper">
-          <span>Email :&nbsp;</span>
+          <span>{{_ "email_address" }} :&nbsp;</span>
           {{ getCurrentUserEmail }}
         </p>
         <form id="change-password-form" class="change-password-form ui form">
-          <h3>Change your password</h3>
+          <h3>{{_ "change_password" }}</h3>
           <div class="message-wrapper" id="info-password"></div>
           <div class="field">
-            <label for="oldPassword">Old Password :</label>
+            <label for="oldPassword">{{_ "old_password" }} :</label>
             <input type="password" class="" id="oldPassword" />
           </div>
           <div class="field">
-            <label for="newPassword">New Password :</label>
+            <label for="newPassword">{{_ "new_password" }} :</label>
             <input type="password" class="" id="newPassword" />
           </div>
           <div class="field">
-            <label for="confirmPassword">Confirm your new password :</label>
+            <label for="confirmPassword">{{_ "confirm_new_password" }} :</label>
             <input type="password" class="" id="confirmPassword" />
           </div>
           <div id="info-confirm-password"></div>
           <div class="field">
             <button type="submit" class="ui right labeled green icon button" id="change-password-button">
               <i class="save icon right"></i>
-              Save
+              {{_ "save" }}
             </button>
           </div>
         </form>

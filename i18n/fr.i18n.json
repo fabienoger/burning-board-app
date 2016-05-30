@@ -4,6 +4,16 @@
   "user_not_allowed": "Vous n'êtes pas autorisé à effectuer cette action.",
   "user_not_allowed_page": "Vous n'êtes pas autorisé à voir cette page.",
 
+  // Actions
+  "cancel": "Annuler",
+  "select": "Sélectionner",
+  "create": "Créer",
+  "see": "Voir",
+  "update": "Mettre à jour",
+  "remove": "Supprimer",
+  "save": "Enregistrer",
+  "loading": "Chargement",
+
   // Form
   "password": "Mot de passe",
   "confirm_password": "Confirmez le mot de passe",
@@ -22,13 +32,16 @@
   "passwords_not_equals": "Les deux mots de passe doivent être identiques.",
 
   // Users
+  "my_profile": "Mon profil",
+  "change_password": "Modifier mon mot de passe",
   "user": "Utilisateur",
   "users": "Utilisateurs",
+  "USERS": "UTILISATEURS",
   "username": "Nom d'utilisateur",
   "create_user": "Créer un utilisateur",
   "user_list": "Liste des utilisateurs",
   "users_administration": "Administration des utilisateurs",
-  "update_user": "Mettre à jour",
+  "update_user": "Mettre à jour %s",
   "user_successfully_created": "L'utilisateur a été créé avec succès.",
   "user_successfully_updated": "L'utilisateur a été mis à jour avec succès.",
   "user_successfully_removed": "L'utilisateur a été supprimé avec succès.",

@@ -2,20 +2,20 @@
   <div class="create-user ui segment">
     <div class="ui header">
       <i class="icon user add"></i>
-      Create User
+      {{_ "create_user" }}
     </div>
     <form id="new-user-form" action="action" class="ui form">
       <div id="new-user-info" class="message-wrapper"></div>
       <div class="field">
-        <label for="account-email">Email : </label>
+        <label for="account-email">{{_ "email_address" }} : </label>
         <input type="email" class="" id="account-email" />
       </div>
       <div class="field">
-        <label for="account-password">Password : </label>
+        <label for="account-password">{{_ "password" }} : </label>
         <input type="password" class="" id="account-password" />
       </div>
       <div class="field">
-        <label for="confirm-password">Confirm password : </label>
+        <label for="confirm-password">{{_ "confirm_password" }} : </label>
         <input type="password" class="" id="confirm-password" />
       </div>
       <div class="ui segment">
@@ -37,7 +37,7 @@
       <div class="action">
         <button type="submit" class="ui right labeled green icon button" id="submit-new-user-form">
           <i class="add user icon right"></i>
-          Create
+          {{_ "create" }}
         </button>
       </div>
     </form>

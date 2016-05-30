@@ -4,6 +4,16 @@
   "user_not_allowed": "You are not allowed to perform this action.",
   "user_not_allowed_page": "You are not allowed to view this page.",
 
+  // Actions
+  "cancel": "Cancel",
+  "select": "Select",
+  "create": "Create",
+  "see": "See",
+  "update": "Update",
+  "remove": "Remove",
+  "save": "Save",
+  "loading": "Loading",
+
   // Form
   "password": "Password",
   "confirm_password": "Confirm password",
@@ -22,13 +32,16 @@
   "passwords_not_equals": "The two password must be identical.",
 
   // Users
+  "my_profile": "My profile",
+  "change_password": "Change your password",
   "user": "User",
   "users": "Users",
+  "USERS": "USERS",
   "username": "username",
   "create_user": "Create User",
   "user_list": "User List",
   "users_administration": "Users Administration",
-  "update_user": "Update",
+  "update_user": "Update %s",
   "user_successfully_created": "The user has been sucessfully created.",
   "user_successfully_updated": "The user has been sucessfully updated.",
   "user_successfully_removed": "The user has been sucessfully removed.",

@@ -2,12 +2,12 @@
   <div class="update-user">
     <div class="ui header">
       <i class="edit icon"></i>
-      Update {{ selectedUser.profile.username }}
+      {{_ "update_user" selectedUser.profile.username }}
     </div>
     <form class="ui form" id="update-user">
       <div id="update-user-info" class="message-wrapper"></div>
       <div class="field">
-        <label for="account-email">Email : </label>
+        <label for="account-email">{{_ "email_address" }} : </label>
         <input type="email" id="account-email" value="{{ selectedUser.emails.[0].address }}" />
       </div>
       <div class="ui segment">
@@ -29,7 +29,7 @@
       <div class="action">
         <button type="submit" class="ui labeled green icon button">
           <i class="save icon"></i>
-          Save
+          {{_ "save" }}
         </button>
       </div>
     </form>

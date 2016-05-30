@@ -2,7 +2,7 @@
   <div class="users ui segment">
     <div class="ui header">
       <i class="icon users"></i>
-      Users
+      {{_ "users" }}
     </div>
     <div class="row">
       <div class="ui grid stackable">
@@ -10,7 +10,7 @@
           {{#if selectedUser}}
             <button id="empty-update-user" class="ui green button labeled icon">
               <i class="add user icon"></i>
-              New User
+              {{_ "create_user" }}
             </button>
           {{/if}}
           <div id="info-users" class="message-wrapper"></div>
@@ -30,7 +30,7 @@
                 </p>
                 <p>
                   <i class="icon mail"></i>
-                  Email : {{ emails.[0].address }}
+                  {{_ "email_address" }} : {{ emails.[0].address }}
                 </p>
                 <p>
                   <i class="icon ban"></i>
@@ -53,15 +53,15 @@
                 <div class="actions">
                   <a href="/users/{{ _id }}" class="ui button labeled icon blue">
                     <i class="icon eye"></i>
-                    See
+                    {{_ "see" }}
                   </a>
                   <button data-id="{{ _id }}" class="ui button labeled icon green update-user">
                     <i class="icon settings"></i>
-                    Update
+                    {{_ "update" }}
                   </button>
                   <button data-id="{{ _id }}" class="ui button labeled icon red remove-user">
                     <i class="icon remove user"></i>
-                    Remove
+                    {{_ "remove" }}
                   </button>
                 </div>
               </div>

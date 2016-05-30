@@ -20,6 +20,7 @@ Template.register.events({
             password: password,
             profile:
             {
+              language: "en",
               username: "",
               active: true,
               changeUserName: true,
