@@ -20,6 +20,8 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 # Front
 semantic:ui
 fourseven:scss
+juliancwirko:s-alert
+juliancwirko:s-alert-slide
 seriousm:emoji-continued
 
 # Routes
@@ -30,6 +32,7 @@ flemay:less-autoprefixer
 # Utils
 http
 random
+tap:i18n
 underscore
 reactive-dict
 momentjs:moment

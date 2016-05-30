@@ -28,7 +28,7 @@ Template.editUser.events({
 
     // If all fields are continue else return;
     if (!oldPassword.value || !newPassword.value || !confirmPassword.value) {
-      Modules.client.utils.displayPanel("message-info", "negative", "warning", "Tous les champs doivent être remplis.");
+      sAlert.warning(TAPi18n.__("fields_are_required"));
       return;
     }
 
@@ -42,7 +42,7 @@ Template.editUser.events({
             console.log(error);
             // Incorrect Password
             if (error.error == 403) {
-              Modules.client.utils.displayPanel("info-password", "negative", "lock", "Le mot de passe est incorrect.");
+              sAlert.warning(TAPi18n.__("incorrect_password"));
             }
           } else {
             // Empty input fields
@@ -50,11 +50,11 @@ Template.editUser.events({
             newPassword.value = '';
             confirmPassword.value = '';
 
-            Modules.client.utils.displayPanel("info-password", "positive", "unlock", "Votre mot de passe à bien été modifié.");
+            sAlert.success(TAPi18n.__("pwd_successfully_updated"));
           }
         });
       } else {
-        Modules.client.utils.displayPanel("info-confirm-password", "negative", "lock", "Entrez le même mot de passe ci-dessus.");
+        sAlert.warning(TAPi18n.__("passwords_not_equals"));
       }
     } else {
       FlowRouter.go('/login');

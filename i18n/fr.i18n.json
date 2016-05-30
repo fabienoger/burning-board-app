@@ -1,0 +1,51 @@
+{
+  // Alert messages
+  "something_went_wrong": "Oups ! Une erreur s'est produite.",
+  "user_not_allowed": "Vous n'êtes pas autorisé à effectuer cette action.",
+  "user_not_allowed_page": "Vous n'êtes pas autorisé à voir cette page.",
+
+  // Form
+  "password": "Mot de passe",
+  "confirm_password": "Confirmez le mot de passe",
+  "fields_are_required": "Tous les champs sont requis.",
+  "old_password": "Ancien mot de passe",
+  "new_password": "Nouveau mot de passe",
+  "confirm_new_password": "Confirmez votre nouveau mot de passe",
+  "email_already_exist": "L'email existe déjà.",
+  "incorrect_password": "Le mot de passe est incorrect.",
+  "pwd_successfully_updated": "Le mot de passe à bien été mis à jour.",
+  "passwords_not_equals": "Les deux mots de passe doivent être identiques.",
+
+  // Fields
+  "invalid_email": "Votre adresse email est invalide.",
+  "invalid_email_pwd": "L'email ou le mot de passe est incorrect.",
+  "passwords_not_equals": "Les deux mots de passe doivent être identiques.",
+
+  // Users
+  "user": "Utilisateur",
+  "users": "Utilisateurs",
+  "username": "Nom d'utilisateur",
+  "create_user": "Créer un utilisateur",
+  "user_list": "Liste des utilisateurs",
+  "users_administration": "Administration des utilisateurs",
+  "update_user": "Mettre à jour",
+  "user_successfully_created": "L'utilisateur a été créé avec succès.",
+  "user_successfully_updated": "L'utilisateur a été mis à jour avec succès.",
+  "user_successfully_removed": "L'utilisateur a été supprimé avec succès.",
+  "yes_remove_user": "Oui, supprimer cet utilisateur",
+  "language_successfully_updated": "Le language a été mis à jour avec succès.",
+  "user_already_exist": "Le nom d'utilisateur existe déjà.",
+  "user_inactive": "L'utilisateur à été mis à jour. Compte inactif.",
+
+  // Modals
+  "are_you_sure": "Êtes-vous ABSOLUMENT sûr ?",
+  "yes_remove_env": "Oui, supprimer cet environnement",
+
+  // Logs
+  "connection": "Vous êtes connecté !",
+  "log_in_to_account": "Connectez-vous à votre compte",
+  "email_address": "Adresse e-mail",
+  "login": "S'identifier",
+  "logout": "Se déconnecter",
+  "sign_in": "Se connecter"
+}

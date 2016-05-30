@@ -26,14 +26,13 @@ Template.updateUser.events({
         }, function(error, result) {
           if (error) {
             console.log(error);
-            Modules.client.utils.displayPanel("update-user-info", "negative", "warning", "Oups, Something went wrong.");
+            sAlert.error(TAPi18n.__("something_went_wrong"));
           } else {
-            Modules.client.utils.displayPanel("update-user-info", "positive", "checkmark", "The user been updated.");
+            sAlert.success(TAPi18n.__("user_successfully_updated"));
           }
         });
       } else {
-        // Display info message
-        Modules.client.utils.displayPanel("update-user-info", "negative", "warning", "All fields are required..");
+        sAlert.warning(TAPi18n.__("fields_are_required"));
       }
     } else {
       // Redirect to home page

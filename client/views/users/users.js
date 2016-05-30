@@ -29,17 +29,19 @@ Template.users.events({
         Meteor.call("upsertUser", e.currentTarget.dataset.id, {$set: {'profile.active': false}}, function(error, result) {
           if (error) {
             console.log(error);
+            sAlert.error(TAPi18n.__("something_went_wrong"));
           } else {
-            Modules.client.utils.displayPanel("info-users", "positive", "checkmark", "The user been updated. Account not active.");
+            sAlert.warning(TAPi18n.__("user_inactive"));
           }
         });
       } else {
         // Redirect user to home page
         FlowRouter.go('home');
+        sAlert.warning(TAPi18n.__("user_not_allowed"));
       }
     } else {
 //      console.log(e.target);
-       Modules.client.utils.displayPanel("info-users", "negative", "warning", "Oups, Something went wrong.");
+      sAlert.warning(TAPi18n.__("something_went_wrong"));
     }
   }
 });

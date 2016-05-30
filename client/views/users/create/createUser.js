@@ -46,12 +46,12 @@ Template.createUser.events({
           Meteor.call("newUser", user, function(error, result) {
             if (error) {
               if (error.error == 400) {
-                Modules.client.utils.displayPanel("new-user-info", "negative", "warning", "The password fields must be required.");
-
+                sAlert.warning(TAPi18n.__("fields_are_required"));
               } else if (error.error == 403) {
-                Modules.client.utils.displayPanel("new-user-info", "negative", "warning", "This email address is already registered.");
+                sAlert.warning(TAPi18n.__("email_already_exist"));
               } else {
                 console.log(err);
+                sAlert.warning(TAPi18n.__("something_went_wrong"));
               }
             } else {
               // Clean all fields
@@ -62,17 +62,17 @@ Template.createUser.events({
               superAdmin.checked = false;
 
               // Display success message
-              Modules.client.utils.displayPanel("new-user-info", "positive", "checkmark", "The user has been created.");
+              sAlert.warning(TAPi18n.__("user_successfully_created"));
             }
           });
         } else {
-          Modules.client.utils.displayPanel("new-user-info", "negative", "warning", "The two passwords must be identical.");
+          sAlert.warning(TAPi18n.__("passwords_not_equals"));
         }
       } else {
-        Modules.client.utils.displayPanel("new-user-info", "negative", "warning", "The email is not valid.");
+        sAlert.warning(TAPi18n.__("invalid_email"));
       }
     } else {
-      Modules.client.utils.displayPanel("new-user-info", "negative", "warning", "All fields are required.");
+      sAlert.warning(TAPi18n.__("fields_are_required"));
     }
   }
 });

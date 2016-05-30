@@ -1,0 +1,51 @@
+{
+  // Alert messages
+  "something_went_wrong": "Oups ! Something went wrong.",
+  "user_not_allowed": "You are not allowed to perform this action.",
+  "user_not_allowed_page": "You are not allowed to view this page.",
+
+  // Form
+  "password": "Password",
+  "confirm_password": "Confirm password",
+  "fields_are_required": "All fields are required.",
+  "old_password": "Old password",
+  "new_password": "New password",
+  "confirm_new_password": "Confirm your new password",
+  "email_already_exist": "This email already exist.",
+  "incorrect_password": "Incorrect password.",
+  "pwd_successfully_updated": "Password was successfully updated.",
+  "passwords_not_equals": "The two password must be identical.",
+
+  // Fields
+  "invalid_email": "Your email address is invalid.",
+  "invalid_email_pwd": "Incorrect email or password",
+  "passwords_not_equals": "The two password must be identical.",
+
+  // Users
+  "user": "User",
+  "users": "Users",
+  "username": "username",
+  "create_user": "Create User",
+  "user_list": "User List",
+  "users_administration": "Users Administration",
+  "update_user": "Update",
+  "user_successfully_created": "The user has been sucessfully created.",
+  "user_successfully_updated": "The user has been sucessfully updated.",
+  "user_successfully_removed": "The user has been sucessfully removed.",
+  "yes_remove_user": "Yes, remove this user",
+  "language_successfully_updated": "The user language has been sucessfully updated.",
+  "user_already_exist": "The username already exist.",
+  "user_inactive": "The user has been updated. Inactive account.",
+
+  // Modals
+  "are_you_sure": "Are you ABSOLUTELY sure ?",
+  "yes_remove_env": "Yes, remove this environment",
+
+  // Logs
+  "connection": "You are connected !",
+  "log_in_to_account": "Log-in to your account",
+  "email_address": "E-mail address",
+  "login": "Login",
+  "logout": "Logout",
+  "sign_in": "Sign In"
+}
