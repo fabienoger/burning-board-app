@@ -8,6 +8,7 @@
   // Infos
   "app_in_development": "This application is currently in development.",
   "give_a_feedback": "Please give me a feedback for improving this application !",
+  "welcome_youre_login": "Welcome ! You're login. It's anonymous chat app. Enjoy !",
 
   // Actions
   "cancel": "Cancel",
@@ -101,6 +102,8 @@
   "yes_remove": "Yes, remove",
 
   // Logs
+  "incorrect_email_pwd": "Email or password are incorrect.",
+  "youre_login": "You're now login.",
   "connection": "You are connected !",
   "log_in_to_account": "Log-in to your account",
   "email_address": "E-mail address",

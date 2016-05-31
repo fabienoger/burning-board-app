@@ -13,17 +13,20 @@ Template.login.events({
         Meteor.loginWithPassword(email, password, function(err) {
           if (!err) {
             FlowRouter.go('/');
+            sAlert.error(TAPi18n.__("something_went_wrong"));
           } else {
             if (err.error == 403) {
-              Modules.client.utils.displayPanel("login-info", "negative", "lock", "The email or the password are incorrect.");
+              sAlert.warning(TAPi18n.__("incorrect_email_pwd"));
+            } else {
+              sAlert.success(TAPi18n.__("youre_login"));
             }
           }
         });
       } else {
-        Modules.client.utils.displayPanel("login-info", "negative", "warning", "The email is not valid.");
+        sAlert.warning(TAPi18n.__("invalid_email"));
       }
     } else {
-      Modules.client.utils.displayPanel("login-info", "negative", "warning", "All fields are required.");
+      sAlert.warning(TAPi18n.__("fields_are_required"));
     }
   }
 });

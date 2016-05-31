@@ -8,6 +8,7 @@
   // Infos
   "app_in_development": "Cette application est actuellement en développement.",
   "give_a_feedback": "S'il vous plaît, laissé moi un commentaire pour améliorer cette application !",
+  "welcome_youre_login": "Bienvenue ! Vous êtes connectez. C'est une application de chat anonyme.",
 
   // Actions
   "cancel": "Annuler",
@@ -101,6 +102,8 @@
   "yes_remove": "Oui, supprimer",
 
   // Logs
+  "incorrect_email_pwd": "L'email ou le mot de passe est invalide.",
+  "youre_login": "Vous êtes connectez.",
   "connection": "Vous êtes connecté !",
   "log_in_to_account": "Connectez-vous à votre compte",
   "email_address": "Adresse e-mail",
