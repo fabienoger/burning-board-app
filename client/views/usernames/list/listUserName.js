@@ -13,13 +13,13 @@ Template.listUserNames.events({
       Meteor.call("removeUserName", id, function(err, result) {
         if (err) {
           console.error("removeUserName ", err);
-          Modules.client.utils.displayPanel("username-info", "negative", "warning", "Oups ! Something went wrong.");
+          sAlert.error(TAPi18n.__("something_went_wrong"));
         } else {
-          Modules.client.utils.displayPanel("username-info", "positive", "checkmark", "Username was successfully removed !");
+          sAlert.success(TAPi18n.__("username_successfully_removed"));
         }
       });
     } else {
-      Modules.client.utils.displayPanel("username-info", "negative", "heart", "Ah bah non t'es pas admin ! #withLove #Peace");
+      sAlert.warning(TAPi18n.__("not_admin"));
     }
   }
 });

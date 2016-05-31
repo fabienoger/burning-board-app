@@ -3,6 +3,7 @@
   "something_went_wrong": "Oups ! Une erreur s'est produite.",
   "user_not_allowed": "Vous n'êtes pas autorisé à effectuer cette action.",
   "user_not_allowed_page": "Vous n'êtes pas autorisé à voir cette page.",
+  "not_admin": "Ah bah non t'es pas admin ! #withLove #peace",
 
   // Actions
   "cancel": "Annuler",
@@ -68,11 +69,20 @@
   "channel_successfully_created": "Le salon # %s à bien été créé.",
   "channel_successfully_updated": "Le salon # %s à bien été mis à jour.",
   "channel_successfully_removed": "Le salon # %s à bien été supprimé.",
+  "yes_remove_channel": "Oui, supprimer ce salon",
 
   // Usernames
-  "launch_random_generate": "Lancer la génération des nom d'utilisateurs",
+  "username": "Nom d'utilisateur",
+  "username_list": "Liste des noms d'utilisateurs",
+  "launch_random_generate": "Lancer la génération des noms d'utilisateurs",
   "create_username": "Créer un pseudo",
   "generate_usernames": "Génération des pseudo",
+  "are_you_sure_usernames": "Êtes-vous ABSOLUMENT sûr de générer les noms d'utilisateurs ?",
+  "yes_generate_usernames": "Oui, générer les pseudo !",
+  "generate_success": "Les nom d'utilisateurs ont bien été générés !",
+  "username_already_exist": "Le nom d'utilisateur existe déjà !",
+  "username_field_required": "Le champ 'Nom d'utilisateur' est requis !",
+  "username_successfully_removed": "Le nom d'utilisateur à bien été supprimé.",
 
   // FeedBacks
   "send_feedback": "Envoyer un commentaire",
@@ -81,7 +91,6 @@
   // Modals
   "are_you_sure": "Êtes-vous ABSOLUMENT sûr ?",
   "yes_remove": "Oui, supprimer",
-  "yes_remove_channel": "Oui, supprimer ce salon",
 
   // Logs
   "connection": "Vous êtes connecté !",

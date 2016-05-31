@@ -3,6 +3,7 @@
   "something_went_wrong": "Oups ! Something went wrong.",
   "user_not_allowed": "You are not allowed to perform this action.",
   "user_not_allowed_page": "You are not allowed to view this page.",
+  "not_admin": "Oups ! You're not admin ! #withLove #peace",
 
   // Actions
   "cancel": "Cancel",
@@ -68,11 +69,20 @@
   "channel_successfully_created": "# %s channel has been sucessfully created.",
   "channel_successfully_updated": "# %s channel has been sucessfully updated.",
   "channel_successfully_removed": "# %s channel has been sucessfully removed.",
+  "yes_remove_channel": "Yes, remove this channel",
 
   // Usernames
+  "username": "UserName",
+  "username_list": "Username list",
   "launch_random_generate": "Launch random generate",
   "create_username": "Create Username",
   "generate_usernames": "Generate UserNames",
+  "are_you_sure_usernames": "Are you ABSOLUTELY sure to generate usernames ?",
+  "yes_generate_usernames": "Yes, generate usernames !",
+  "generate_success": "Usernames have been successfully generated !",
+  "username_already_exist": "Usename already exists !",
+  "username_field_required": "Username field is required !",
+  "username_successfully_removed": "The username has been successfully removed.",
 
   // FeedBacks
   "send_feedback": "Send FeedBack",
@@ -81,7 +91,6 @@
   // Modals
   "are_you_sure": "Are you ABSOLUTELY sure ?",
   "yes_remove": "Yes, remove",
-  "yes_remove_channel": "Yes, remove this channel",
 
   // Logs
   "connection": "You are connected !",
