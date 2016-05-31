@@ -42,6 +42,13 @@
   "invalid_email_pwd": "L'email ou le mot de passe est incorrect.",
   "passwords_not_equals": "Les deux mots de passe doivent être identiques.",
 
+  // Global
+  "active": "Actif",
+  "language": "Langue",
+  "select_language": "Selectionner la langue",
+  "french": "Français",
+  "english": "Anglais",
+
   // Users
   "my_profile": "Mon profil",
   "change_password": "Modifier mon mot de passe",
@@ -60,6 +67,7 @@
   "language_successfully_updated": "Le language a été mis à jour avec succès.",
   "user_already_exist": "Le nom d'utilisateur existe déjà.",
   "user_inactive": "L'utilisateur à été mis à jour. Compte inactif.",
+  "language_successfully_updated": "Le language a été mis à jour avec succès.",
 
   // Chat
 
@@ -69,6 +77,7 @@
   "channel_name": "Nom du salon",
   "invite_members": "Ajouter des membres",
   "CHANNELS": "SALONS",
+  "MEMBERS": "MEMBRES",
   "join_channel": "Rejoindre le salon",
   "its_private_channel": "Désolé ! Ce salon est privé.",
   "welcome_channel": "Bienvenue dans le salon # %s",

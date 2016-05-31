@@ -1,5 +1,34 @@
-Template.editUser.rendered = function() {
-}
+/****************************************
+#####          OnRENDERED           #####
+****************************************/
+
+Template.editUser.onRendered(function() {
+  Tracker.autorun(function() {
+    var currentLanguage = Modules.client.user.language.get();
+    setTimeout(function() {
+      $('.ui.dropdown#select-language').dropdown({
+        onChange: function(value, text, $selectedItem) {
+          // Initialize variables
+          var language = $selectedItem[0].innerText.trim();
+          var lng = undefined;
+
+          // Check if language is French or English
+          if (language == "Français" || language == "French") {
+            lng = "fr";
+          } else if (language == "English" || language == "Anglais") {
+            lng = "en";
+          }
+
+          // Check if lng is not empty
+          if (lng) {
+            Modules.client.utils.changeUserLanguage(lng);
+          }
+          $('.ui.dropdown#select-language').dropdown();
+        }
+      });
+    }, 300);
+  });
+});
 
 /****************************************
 #####            HELPERS            #####
@@ -10,6 +39,15 @@ Template.editUser.helpers({
   getCurrentUserEmail: function() {
     if (Meteor.user())
       return Meteor.user().emails[0].address;
+  },
+  // Return current user language or false
+  getLanguage: function() {
+    if (Meteor.user()) {
+      var language = Meteor.user().profile.language;
+    } else {
+      var language = Modules.client.user.language.get();
+    }
+    return language;
   }
 });
 

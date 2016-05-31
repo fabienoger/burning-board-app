@@ -1,4 +1,37 @@
 Modules.client.utils = {
+  // Change user language
+  changeUserLanguage: function(lng) {
+    // Check if lng is not empty
+    if (lng) {
+      Modules.client.user.language.set(lng);
+      var modifier = {
+        $set: {
+          "profile.language": lng
+        }
+      };
+      // Upsert language user
+      Meteor.call("upsertUser", Meteor.userId(), modifier, function(err, result) {
+        if (err) {
+          if (err.error == "missing-params") {
+            // Display alert message
+            sAlert.error(TAPi18n.__("something_went_wrong"));
+          } else {
+            // Display alert message
+            sAlert.error(TAPi18n.__("something_went_wrong"));
+            console.error("upsertUser ", err);
+          }
+        } else {
+          if (result.numberAffected == 1) {
+            // Display alert message
+            sAlert.success(TAPi18n.__("language_successfully_updated"));
+          }
+        }
+      });
+    } else {
+      // Display alert message
+      sAlert.error(TAPi18n.__("something_went_wrong"));
+    }
+  },
   // Toggle the nav menu
   toggleMenu: function() {
     var width = $(window).width();

@@ -42,6 +42,13 @@
   "invalid_email_pwd": "Incorrect email or password",
   "passwords_not_equals": "The two password must be identical.",
 
+  // Global
+  "active": "Active",
+  "language": "Language",
+  "select_language": "Select language",
+  "french": "French",
+  "english": "English",
+
   // Users
   "my_profile": "My profile",
   "change_password": "Change your password",
@@ -60,6 +67,7 @@
   "language_successfully_updated": "The user language has been sucessfully updated.",
   "user_already_exist": "The username already exist.",
   "user_inactive": "The user has been updated. Inactive account.",
+  "language_successfully_updated": "The user language has been sucessfully updated.",
 
   // Chat
 
@@ -69,6 +77,7 @@
   "channel_name": "Channel name",
   "invite_members": "Invite members",
   "CHANNELS": "CHANNELS",
+  "MEMBERS": "MEMBERS",
   "join_channel": "Join the channel",
   "its_private_channel": "Sorry ! It's private channel.",
   "welcome_channel": "Welcome to channel # %s",

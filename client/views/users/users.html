@@ -50,6 +50,13 @@
                     false
                   {{/if}}
                 </p>
+                <p>
+                  <i class="icon flag"></i>
+                  {{_ "language" }} :
+                  {{#if getLanguage profile.language }}
+                    <i class="flag {{ getLanguage profile.language }}"></i>
+                  {{/if}}
+                </p>
                 <div class="actions">
                   <a href="/users/{{ _id }}" class="ui button labeled icon blue">
                     <i class="icon eye"></i>

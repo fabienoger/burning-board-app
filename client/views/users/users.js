@@ -64,5 +64,13 @@ Template.users.helpers({
   // Get the currentUser selected
   'selectedUser': function() {
     return Modules.client.user.updateUser.get();
+  },
+  // Return current user language or false
+  getLanguage: function(userLanguage) {
+    var language = userLanguage;
+    if (language == "en") {
+      return "gb";
+    }
+    return "fr";
   }
 });

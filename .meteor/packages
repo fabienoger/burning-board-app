@@ -21,7 +21,7 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 semantic:ui
 fourseven:scss
 juliancwirko:s-alert
-juliancwirko:s-alert-slide
+juliancwirko:s-alert-genie
 seriousm:emoji-continued
 
 # Routes

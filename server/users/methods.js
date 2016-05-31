@@ -5,8 +5,13 @@ Meteor.methods({
   },
   // Upsert User
   upsertUser: function(userId, object) {
-    return Meteor.users.upsert({
-      _id: userId,
-    }, object);
+    // Check if userId and object are not empty
+    if (userId && object) {
+      return Meteor.users.upsert({
+        _id: userId,
+      }, object);
+    }
+    throw new Meteor.Error("missing-params", "Missing 'userId' or 'object' param.");
+    return;
   }
 });

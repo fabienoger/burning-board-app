@@ -1,6 +1,6 @@
 Meteor.startup(function () {
   sAlert.config({
-    effect: 'slide',
+    effect: 'genie',
     position: 'top-right',
     timeout: 10000,
     html: false,

@@ -13,12 +13,12 @@ Template.login.events({
         Meteor.loginWithPassword(email, password, function(err) {
           if (!err) {
             FlowRouter.go('/');
-            sAlert.error(TAPi18n.__("something_went_wrong"));
+            sAlert.success(TAPi18n.__("youre_login"));
           } else {
             if (err.error == 403) {
               sAlert.warning(TAPi18n.__("incorrect_email_pwd"));
             } else {
-              sAlert.success(TAPi18n.__("youre_login"));
+              sAlert.error(TAPi18n.__("something_went_wrong"));
             }
           }
         });
