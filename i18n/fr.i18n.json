@@ -56,19 +56,39 @@
 
 
   // Channels
+  "create_channel": "Créer un salon",
+  "channel_name": "Nom du salon",
+  "invite_members": "Ajouter des membres",
+  "CHANNELS": "SALONS",
   "join_channel": "Rejoindre le salon",
   "its_private_channel": "Désolé ! Ce salon est privé.",
   "welcome_channel": "Bienvenue dans le salon # %s",
+  "channel_name_too_long": "Le nom du salon est trop long.",
+  "channel_name_already_exist": "Le nom du salon # %s existe déjà.",
+  "channel_successfully_created": "Le salon # %s à bien été créé.",
+  "channel_successfully_updated": "Le salon # %s à bien été mis à jour.",
+  "channel_successfully_removed": "Le salon # %s à bien été supprimé.",
+
+  // Usernames
+  "launch_random_generate": "Lancer la génération des nom d'utilisateurs",
+  "create_username": "Créer un pseudo",
+  "generate_usernames": "Génération des pseudo",
+
+  // FeedBacks
+  "send_feedback": "Envoyer un commentaire",
+  "feedbacks": "Commentaires",
 
   // Modals
   "are_you_sure": "Êtes-vous ABSOLUMENT sûr ?",
-  "yes_remove_env": "Oui, supprimer cet environnement",
+  "yes_remove": "Oui, supprimer",
+  "yes_remove_channel": "Oui, supprimer ce salon",
 
   // Logs
   "connection": "Vous êtes connecté !",
   "log_in_to_account": "Connectez-vous à votre compte",
   "email_address": "Adresse e-mail",
   "login": "S'identifier",
-  "logout": "Se déconnecter",
-  "sign_in": "Se connecter"
+  "logout": "Déconnexion",
+  "sign_in": "Se connecter",
+  "sign_up": "Inscription"
 }

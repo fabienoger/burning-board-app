@@ -43,9 +43,9 @@ Template.channel.events({
               } else {
                 // Display information message
                 if (result != 0) {
-                  Modules.client.utils.displayPanel("message-info", "positive", "checkmark", "Channel was successfully removed ! <i class='icon smile'></i>");
+                  sAlert.success(TAPi18n.__("channel_successfully_removed", channel.name));
                 } else {
-                  Modules.client.utils.displayPanel("message-info", "negative", "warning sign", "Channel not removed ! <i class='icon meh'></i>");
+                  sAlert.error(TAPi18n.__("something_went_wrong"));
                 }
               }
             });

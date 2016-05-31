@@ -58,7 +58,7 @@ Template.channelForm.events({
         Meteor.call("upsertChannel", updatedChannel._id, doc, function(err, result) {
           if (err) {
             console.error("upsertChannel ", err);
-            Modules.client.utils.displayPanel("channelFormInfo", "negative", "warning sign", "Oups ! Something went wrong. <i class='icon meh'></i>");
+            sAlert.error(TAPi18n.__("something_went_wrong"));
           } else {
             if (result.numberAffected == 1) {
               // Close modal
@@ -66,7 +66,7 @@ Template.channelForm.events({
               // Redirect
               FlowRouter.go("/channels/" + updatedChannel.name);
               // Display success message
-              Modules.client.utils.displayPanel("message-info", "positive", "checkmark", "# " + updatedChannel.name + " channel successfully updated !");
+              sAlert.success(TAPi18n.__("channel_successfully_updated", updatedChannel.name));
             }
           }
         });
@@ -89,16 +89,16 @@ Template.channelForm.events({
               console.error("createChannel ", err);
               if (err.error == "invalid-object") {
                 // Display success message
-                Modules.client.utils.displayPanel("channelFormInfo", "negative", "warning sign", "Something went wrong !");
+                sAlert.error(TAPi18n.__("something_went_wrong"));
               } else if (err.error == "channel-name-to-long") {
                 // Display success message
-                Modules.client.utils.displayPanel("channelFormInfo", "negative", "warning sign", "Channel name is to long !");
+                sAlert.warning(TAPi18n.__("channel_name_too_long"));
               } else if (err.error == "channel-name-exist") {
                 // Display success message
-                Modules.client.utils.displayPanel("channelFormInfo", "negative", "warning sign", "# " + findChannel.name + " channel already exists !");
+                sAlert.warning(TAPi18n.__("channel_name_already_exist", findChannel.name));
               } else {
                 // Display success message
-                Modules.client.utils.displayPanel("channelFormInfo", "negative", "warning sign", "Something went wrong !");
+                sAlert.error(TAPi18n.__("something_went_wrong"));
               }
             } else {
               // Find the created Channel
@@ -111,14 +111,17 @@ Template.channelForm.events({
               // Redirect to new channel
               FlowRouter.go("/channels/" + channel.name);
               // Display success message
-              Modules.client.utils.displayPanel("message-info", "positive", "checkmark", "# " + channel.name + " channel successfully created !");
+              sAlert.success(TAPi18n.__("channel_successfully_created", channel.name));
             }
           });
         } else {
           // Display warning message
-          Modules.client.utils.displayPanel("channelFormInfo", "negative", "warning sign", "# " + findChannel.name + " channel already exists !");
+          sAlert.warning(TAPi18n.__("channel_name_already_exist", findChannel.name));
         }
       }
+    } else {
+      // Display warning message
+      sAlert.warning(TAPi18n.__("fields_are_required"));
     }
   }
 });

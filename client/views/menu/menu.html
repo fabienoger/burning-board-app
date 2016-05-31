@@ -8,9 +8,9 @@
       <i class="icon close"></i>
       <div class="message-wrapper" id="username-info"></div>
       {{> listUserNames}}
-      <div class="ui horizontal divider">Users</div>
+      <div class="ui horizontal divider">{{_ "users" }}</div>
       {{> userNamesUserList}}
-      <div class="ui horizontal divider">Launch Random Generate</div>
+      <div class="ui horizontal divider">{{_ "launch_random_generate" }}</div>
       {{> generateUserNames}}
     </div>
   {{/if}}
@@ -42,38 +42,38 @@
         </a>
         <a class="item" id="create-username">
           <i class="icon add"></i>
-          Create UserName
+          {{_ "create_username" }}
         </a>
         <a class="item" id="displayCreateFeedBack">
           <i class="icon bug"></i>
-          Send FeedBack
+          {{_ "send_feedback" }}
         </a>
         {{#if ifAdmin}}
           <a class="item" id="displayGenerateUserNames">
             <i class="icon random"></i>
-            Generate usernames
+            {{_ "generate_usernames" }}
           </a>
         {{/if}}
         {{#if isSuperAdmin}}
           <div class="ui accordion item">
             <div class="active title">
               <i class="dropdown icon"></i>
-              Users
+              {{_ "users" }}
             </div>
             <div class="content">
               <a class="item closeOnClick" id="newUser" href="/users/new">
                 <i class="icon user add"></i>
-                New User
+                {{_ "create_user" }}
               </a>
               <a class="item closeOnClick" href="/users">
                 <i class="icon users"></i>
-                User List
+                {{_ "user_list" }}
               </a>
             </div>
           </div>
           <a class="item closeOnClick" id="feedBacks" href="/feedbacks">
             <i class="icon bug"></i>
-            FeedBacks
+            {{_ "feedbacks" }}
           </a>
         {{/if}}
         {{> channelList }}
@@ -82,7 +82,7 @@
           <div class="item">
             <a class="ui red button labeled icon" href="" id="logout">
               <i class="icon sign out"></i>
-              Logout
+              {{_ "logout" }}
             </a>
           </div>
         </div>
@@ -91,13 +91,13 @@
           <div class="item">
             <a class="ui green button labeled icon" href="/login">
               <i class="sign in icon"></i>
-              Sign in
+              {{_ "sign_in" }}
             </a>
           </div>
           <div class="item">
             <a class="ui blue labeled icon button" href="/register">
               <i class="add user icon"></i>
-              Sign up
+              {{_ "sign_up" }}
             </a>
           </div>
         </div>

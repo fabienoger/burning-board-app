@@ -2,10 +2,10 @@
   <h1 class="ui header">
     {{#if channel }}
       <i class="icon settings"></i>
-      Update #{{ channel.name }}
+      {{_ "update" }} #{{ channel.name }}
     {{ else }}
       <i class="icon plus"></i>
-      Create channel
+      {{_ "create_channel" }}
     {{/if }}
   </h1>
   <div class="channel-form content">
@@ -20,11 +20,11 @@
           </div>
         </div>
       <div class="field">
-        <label for="nameChannel">Channel name : </label>
+        <label for="nameChannel">{{_ "channel_name" }} : </label>
         <input type="text" id="nameChannel" value="{{ channel.name }}" />
       </div>
       <div class="field">
-        <label>Invite members</label>
+        <label>{{_ "invite_members" }}</label>
         <select multiple="" class="ui dropdown search" id="membersChannel">
           {{#each getUsersExceptCreator}}
             {{#if ../channel }}
@@ -38,10 +38,10 @@
       <button type="submit" class="ui button green labeled icon">
         {{#if channel }}
           <i class="icon save"></i>
-          Save
+          {{_ "save" }}
         {{ else }}
           <i class="icon plus"></i>
-          Create
+          {{_ "create" }}
         {{/if}}
       </button>
     </form>

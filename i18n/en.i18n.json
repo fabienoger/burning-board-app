@@ -56,13 +56,32 @@
 
 
   // Channels
+  "create_channel": "Create channel",
+  "channel_name": "Channel name",
+  "invite_members": "Invite members",
+  "CHANNELS": "CHANNELS",
   "join_channel": "Join the channel",
   "its_private_channel": "Sorry ! It's private channel.",
   "welcome_channel": "Welcome to channel # %s",
+  "channel_name_too_long": "Channel name is too long.",
+  "channel_name_already_exist": "# %s channel already exists.",
+  "channel_successfully_created": "# %s channel has been sucessfully created.",
+  "channel_successfully_updated": "# %s channel has been sucessfully updated.",
+  "channel_successfully_removed": "# %s channel has been sucessfully removed.",
+
+  // Usernames
+  "launch_random_generate": "Launch random generate",
+  "create_username": "Create Username",
+  "generate_usernames": "Generate UserNames",
+
+  // FeedBacks
+  "send_feedback": "Send FeedBack",
+  "feedbacks": "FeedBacks",
 
   // Modals
   "are_you_sure": "Are you ABSOLUTELY sure ?",
-  "yes_remove_env": "Yes, remove this environment",
+  "yes_remove": "Yes, remove",
+  "yes_remove_channel": "Yes, remove this channel",
 
   // Logs
   "connection": "You are connected !",
@@ -70,5 +89,6 @@
   "email_address": "E-mail address",
   "login": "Login",
   "logout": "Logout",
-  "sign_in": "Sign In"
+  "sign_in": "Sign In",
+  "sign_up": "Sign Up"
 }

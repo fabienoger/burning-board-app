@@ -51,7 +51,7 @@ Template.createUser.events({
                 sAlert.warning(TAPi18n.__("email_already_exist"));
               } else {
                 console.log(err);
-                sAlert.warning(TAPi18n.__("something_went_wrong"));
+                sAlert.error(TAPi18n.__("something_went_wrong"));
               }
             } else {
               // Clean all fields

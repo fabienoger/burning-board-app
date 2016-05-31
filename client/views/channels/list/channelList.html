@@ -3,11 +3,11 @@
     <i class="icon close"></i>
     <div class="header">
       <i class="icon warning sign"></i>
-      Are you ABSOLUTELY sure ?
+      {{_ "are_you_sure" }}
     </div>
     <div class="actions">
-      <div class="ui cancel button">Cancel</div>
-      <div class="ui positive button">Yes, remove this channel</div>
+      <div class="ui cancel button">{{_ "cancel" }}</div>
+      <div class="ui positive button">{{_ "yes_remove_channel" }}</div>
     </div>
   </div>
   <div class="create-channel ui small modal">
@@ -16,7 +16,7 @@
   </div>
   <div class="item channel-list">
     <div id="displayCreateChannel" class="header">
-      CHANNELS
+      {{_ "CHANNELS" }}
       ({{ nbChannels }})
       <i class="icon plus square outline large"></i>
     </div>

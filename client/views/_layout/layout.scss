@@ -22,6 +22,11 @@ div.modal {
   }
 }
 
+// sAlert popup z-index
+.s-alert-box {
+  z-index: 2000;
+}
+
 // Loader style
 div.ui.active.loader:after {
   border-color: $p-color transparent transparent;
