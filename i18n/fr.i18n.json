@@ -5,6 +5,10 @@
   "user_not_allowed_page": "Vous n'êtes pas autorisé à voir cette page.",
   "not_admin": "Ah bah non t'es pas admin ! #withLove #peace",
 
+  // Infos
+  "app_in_development": "Cette application est actuellement en développement.",
+  "give_a_feedback": "S'il vous plaît, laissé moi un commentaire pour améliorer cette application !",
+
   // Actions
   "cancel": "Annuler",
   "select": "Sélectionner",
@@ -16,8 +20,11 @@
   "save": "Enregistrer",
   "loading": "Chargement",
   "go_to": "Aller au salon",
+  "created_at": "Créé à",
+  "created_by": "Créé par",
 
   // Form
+  "title": "Titre",
   "password": "Mot de passe",
   "confirm_password": "Confirmez le mot de passe",
   "fields_are_required": "Tous les champs sont requis.",
@@ -87,6 +94,7 @@
   // FeedBacks
   "send_feedback": "Envoyer un commentaire",
   "feedbacks": "Commentaires",
+  "feedback_successfully_sent": "Votre commentaire à été envoyé ! Merci ! <3",
 
   // Modals
   "are_you_sure": "Êtes-vous ABSOLUMENT sûr ?",

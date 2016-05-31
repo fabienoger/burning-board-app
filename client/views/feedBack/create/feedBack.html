@@ -2,21 +2,20 @@
   <div class="createFeedback">
     <h1 class="ui header attached top">
       <i class="icon bug"></i>
-      Send FeedBack
+      {{_ "send_feedback" }}
     </h1>
     <div class="ui attached segment">
       <div class="ui message info">
         <div class="header">
-          This application is currently in development.
+          {{_ "app_in_development" }}
         </div>
-        <p>Please give me a feedback for improving this application !</p>
+        <p>{{_ "give_a_feedback" }}</p>
       </div>
     </div>
     <div class="ui attached segment">
       <form class="ui form" id="formFeedBack">
-        <div id="feedBackInfo"></div>
         <div class="field">
-          <label for="titleFeedBack">Title : </label>
+          <label for="titleFeedBack">{{_ "title" }} : </label>
           <input type="text" id="titleFeedBack" />
         </div>
         <div class="field">
@@ -25,7 +24,7 @@
         </div>
         <button type="submit" class="ui button labeled icon green">
           <i class="icon checkmark"></i>
-          Send
+          {{_ "send" }}
         </button>
       </form>
     </div>

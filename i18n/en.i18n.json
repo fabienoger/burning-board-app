@@ -5,6 +5,10 @@
   "user_not_allowed_page": "You are not allowed to view this page.",
   "not_admin": "Oups ! You're not admin ! #withLove #peace",
 
+  // Infos
+  "app_in_development": "This application is currently in development.",
+  "give_a_feedback": "Please give me a feedback for improving this application !",
+
   // Actions
   "cancel": "Cancel",
   "select": "Select",
@@ -16,8 +20,11 @@
   "save": "Save",
   "loading": "Loading",
   "go_to": "Go to channel",
+  "created_at": "Created at",
+  "created_by": "Created by",
 
   // Form
+  "title": "Title",
   "password": "Password",
   "confirm_password": "Confirm password",
   "fields_are_required": "All fields are required.",
@@ -87,6 +94,7 @@
   // FeedBacks
   "send_feedback": "Send FeedBack",
   "feedbacks": "FeedBacks",
+  "feedback_successfully_sent": "Your feedback has been sent ! Thanks You ! <3",
 
   // Modals
   "are_you_sure": "Are you ABSOLUTELY sure ?",

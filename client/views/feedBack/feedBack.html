@@ -2,7 +2,7 @@
   <div class="feedBacks">
     <h1 class="ui header attached top">
       <i class="icon bug"></i>
-      FeedBacks
+      {{_ "feedbacks" }}
     </h1>
     <div class="ui attached segment">
       <div class="ui accordion">
@@ -15,7 +15,7 @@
             <p>
               <span class="ui label">
                 <i class="icon wait"></i>
-                Created At : 
+                {{_ "created_at" }} : 
               </span>
               {{ formatDate createdAt }}
             </p>
@@ -29,13 +29,13 @@
             {{#with findUser userId}}
               <a href="/users/{{ _id }}" class="ui label">
                 <i class="icon user"></i>
-                Created by : {{ profile.username }}
+                {{_ "created_by" }} : {{ profile.username }}
               </a>
               <div class="ui message red">
                   <p>
                     <span class="ui label">
                       <i class="icon mail"></i>
-                      Email : 
+                      {{_ "email_address"}} : 
                     </span>
                     {{ emails.[0].address }}
                   </p>

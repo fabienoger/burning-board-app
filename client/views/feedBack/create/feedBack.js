@@ -1,12 +1,4 @@
 /************************
-        RENDERED
-************************/
-
-Template.createFeedBack.rendered = function() {
-
-}
-
-/************************
          EVENTS
 ************************/
 
@@ -30,18 +22,18 @@ Template.createFeedBack.events({
         if (err) {
           // Error display error message
           console.error("createFeedBack ", err);
-          Modules.client.utils.displayPanel("feedBackInfo", "negative", "warning", "Oups ! Something went wrong !");
+          sAlert.error(TAPi18n.__("something_went_wrong"));
         } else {
           // Success display success message and empty fields
           titleFeedBack.value = "";
           messageFeedBack.value = "";
           // Close modal
           $('.ui.small.modal.create-feedBack-modal').modal('hide');
-          Modules.client.utils.displayPanel("message-info", "positive", "checkmark", "Your feedback has been sent ! Thanks You ! <i class='icon smile'></i>");
+          sAlert.success(TAPi18n.__("feedback_successfully_sent"));
         }
       });
     } else {
-      Modules.client.utils.displayPanel("feedBackInfo", "negative", "warning", "All fields are required !");
+      sAlert.warning(TAPi18n.__("fields_are_required"));
     }
   }
 });
