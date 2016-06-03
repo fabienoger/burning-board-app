@@ -16,5 +16,14 @@ Meteor.methods({
     }
     throw new Meteor.Error("missing-params", "Params 'selector' or 'doc' is missing.");
     return;
+  },
+  // Remove message
+  removeMessage: function(selector) {
+    // Check if selector is not empty
+    if (selector) {
+      return Messages.remove(selector);
+    }
+    throw new Meteor.Error("missing-param", "Param 'selector' is missing.");
+    return;
   }
 });

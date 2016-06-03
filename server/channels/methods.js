@@ -30,6 +30,8 @@ Meteor.methods({
   removeChannel: function(channel) {
     // Check if channel name isn't "general" OR "random"
     if (channel != "general" && channel != "random") {
+      // Remove all message
+      Meteor.call("removeMessage", {channel: channel});
       return Channels.remove({name: channel});
     } else {
       return 0;
