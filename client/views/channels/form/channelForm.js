@@ -47,24 +47,50 @@ Template.channelForm.events({
         // Build modifier
         var doc = {
           $set: {
-            name: nameChannel.value.trim(),
             members: selectedMembers,
             public: publicChannel.checked,
             lastUpdate: new Date()
           }
         };
+        // Check if name is not the same
+        if (nameChannel.value.trim() != updatedChannel.name) {
+          // Set name for doc object
+          doc.$set.name = nameChannel.value.trim();
+          // Update all message
+          var selector = {channel: updatedChannel.name};
+          var optionsMessages = {multi: true};
+          var docMessages = {
+            $set: {
+              channel: nameChannel.value.trim()
+            }
+          };
+
+          // Call upsert messages method
+          Meteor.call("upsertMessage", selector, docMessages, optionsMessages, function(err, result) {
+            if (err) {
+              if (err.error == "missing-params") {
+                sAlert.warning(TAPi18n.__("fields_are_required"));
+              }
+              console.error("upsertMessage ", err);
+              sAlert.error(TAPi18n.__("something_went_wrong"));
+            }
+          });
+        }
 
         // Call upsertChannel method
         Meteor.call("upsertChannel", updatedChannel._id, doc, function(err, result) {
           if (err) {
             console.error("upsertChannel ", err);
+            if (err.error == "missing-params") {
+              sAlert.warning(TAPi18n.__("fields_are_required"));
+            }
             sAlert.error(TAPi18n.__("something_went_wrong"));
           } else {
             if (result.numberAffected == 1) {
               // Close modal
               $(".channel-form-modal.ui.modal").modal("hide");
               // Redirect
-              FlowRouter.go("/channels/" + updatedChannel.name);
+              FlowRouter.go("/channels/" + nameChannel.value.trim());
               // Display success message
               sAlert.success(TAPi18n.__("channel_successfully_updated", updatedChannel.name));
             }

@@ -37,9 +37,14 @@ Meteor.methods({
   },
   // upsert Channel by Id
   upsertChannel: function(id, doc) {
-    console.log("upsertChannel");
-    console.log("id: ", id);
-    console.log("doc ", doc);
-    return Channels.upsert({_id: id}, doc)
+    // Check if 'doc' & 'id' params are defined
+    if (id && doc) {
+      console.log("upsertChannel");
+      console.log("id: ", id);
+      console.log("doc ", doc);
+      return Channels.upsert({_id: id}, doc)
+    }
+    throw new Meteor.Error("missing-params", "Params 'id' or 'doc' is missing.");
+    return;
   },
 });
