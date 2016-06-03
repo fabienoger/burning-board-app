@@ -20,9 +20,13 @@ Template.createFeedBack.events({
         createdAt: new Date()
       }, function(err, result) {
         if (err) {
-          // Error display error message
-          console.error("createFeedBack ", err);
-          sAlert.error(TAPi18n.__("something_went_wrong"));
+          if (err.error == "missing-param") {
+            sAlert.warning(TAPi18n.__("fields_are_required"));
+          } else {
+            // Error display error message
+            console.error("createFeedBack ", err);
+            sAlert.error(TAPi18n.__("something_went_wrong"));
+          }
         } else {
           // Success display success message and empty fields
           titleFeedBack.value = "";

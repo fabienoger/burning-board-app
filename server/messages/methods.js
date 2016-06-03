@@ -1,7 +1,12 @@
 Meteor.methods({
   // Create message
   insertMessage: function(message) {
-    return Messages.insert(message);
+    // Check if message is not empty
+    if (message) {
+      return Messages.insert(message);
+    }
+    throw new Meteor.Error("missing-param", "Param 'message' is missing.");
+    return;
   },
   // Upsert message
   upsertMessage: function(selector, doc, options) {

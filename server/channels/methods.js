@@ -28,14 +28,19 @@ Meteor.methods({
   },
   // Remove Channel by name
   removeChannel: function(channel) {
-    // Check if channel name isn't "general" OR "random"
-    if (channel != "general" && channel != "random") {
-      // Remove all message
-      Meteor.call("removeMessage", {channel: channel});
-      return Channels.remove({name: channel});
-    } else {
-      return 0;
+    // Check if channel is not empty
+    if (channel) {
+      // Check if channel name isn't "general" OR "random"
+      if (channel != "general" && channel != "random") {
+        // Remove all message
+        Meteor.call("removeMessage", {channel: channel});
+        return Channels.remove({name: channel});
+      } else {
+        return 0;
+      }
     }
+    throw new Meteor.Error("missing-param", "Param 'channel' is missing.");
+    return;
   },
   // upsert Channel by Id
   upsertChannel: function(id, doc) {

@@ -1,6 +1,11 @@
 Meteor.methods({
   // new User
   newUser: function(doc) {
+    // If doc is empty return Meteor.Error
+    if (!doc) {
+      throw new Meteor.Error("missing-param", "Missing 'doc' param.");
+      return;
+    }
     return Accounts.createUser(doc);
   },
   // Upsert User

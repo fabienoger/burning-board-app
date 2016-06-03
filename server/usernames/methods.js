@@ -1,14 +1,29 @@
 Meteor.methods({
   // Create userName
   createRandomUserName: function(username) {
+    // If username is empty return Meteor.error
+    if (!username) {
+      throw new Meteor.Error("missing-param", "Param 'username' is missing.");
+      return;
+    }
     return Usernames.insert(username);
   },
   // Remove a userName
   removeUserName: function(id) {
+    // If id is empty return Meteor.error
+    if (!id) {
+      throw new Meteor.Error("missing-param", "Param 'id' is missing.");
+      return;
+    }
     return Usernames.remove({_id: id});
   },
   // Upsert userName
   upsertUserName: function(id, object) {
+    // Check if params are empty
+    if (!id || !object) {
+      throw new Meteor.Error("missing-params", "Params 'id' or 'object' is missing.");
+      return;
+    }
     return Usernames.upsert({
       _id: id,
     }, object);

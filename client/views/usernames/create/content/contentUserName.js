@@ -20,8 +20,12 @@ Template.contentCreateUserName.events({
         };
         Meteor.call("createRandomUserName", userName, function(err, userNameId) {
           if (err) {
-            console.error("createRandomUserName() ", err);
-            sAlert.error(TAPi18n.__("something_went_wrong"));
+            if (err.error == "missing-param") {
+              sAlert.warning(TAPi18n.__("username_field_required"));
+            } else {
+              console.error("createRandomUserName() ", err);
+              sAlert.error(TAPi18n.__("something_went_wrong"));
+            }
           } else {
             sAlert.success(TAPi18n.__("username_successfully_created"));
             // Empty userNameInput value
