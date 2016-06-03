@@ -2,6 +2,8 @@
 Template.register.events({
   'submit #register-form': function (event, t) {
     event.preventDefault();
+    // Set isLoading ReactiveVar to true
+    Modules.client.logs.isLoading.set(true);
     // Get all inputs values
     var email = t.find('#account-email').value.trim();
     var password = t.find('#account-password').value.trim();
@@ -30,6 +32,8 @@ Template.register.events({
           }; //,geolocation:{lat: geoloc.lat, lng: geoloc.lng}
 
           Accounts.createUser(user, function(err) {
+            // Set isLoading ReactiveVar to false
+            Modules.client.logs.isLoading.set(false);
             if (!err) {
               FlowRouter.go('/');
               Modules.client.utils.displayWelcomePanel();
@@ -44,13 +48,27 @@ Template.register.events({
             }
           });
         } else {
+          // Set isLoading ReactiveVar to false
+          Modules.client.logs.isLoading.set(false);
           sAlert.warning(TAPi18n.__("invalid_email"));
         }
       } else {
+        // Set isLoading ReactiveVar to false
+        Modules.client.logs.isLoading.set(false);
         sAlert.warning(TAPi18n.__("passwords_not_equals"));
       }
     } else {
+      // Set isLoading ReactiveVar to false
+      Modules.client.logs.isLoading.set(false);
       sAlert.warning(TAPi18n.__("fields_are_required"));
     }
+  }
+});
+
+// Helpers
+Template.register.helpers({
+  // Return isLoading ReactiveVar (get)
+  isLoading: function() {
+    return Modules.client.logs.isLoading.get() || false;
   }
 });

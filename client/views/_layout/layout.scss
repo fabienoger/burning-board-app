@@ -28,7 +28,7 @@ div.modal {
 }
 
 // Loader style
-div.ui.active.loader:after {
+div.ui.active.loader:after, .ui.form.loading:after {
   border-color: $p-color transparent transparent;
 }
 
