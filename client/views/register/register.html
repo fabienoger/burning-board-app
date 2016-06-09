@@ -1,10 +1,10 @@
 <template name="register">
   <div class="register row">
-    <div class="ui middle aligned center aligned grid">
+    <div class="ui center aligned grid">
       <div class="column">
         <div class="ui segment title">
           <h2 class="ui header">
-            Registration
+            {{_ "sign_up" }}
           </h2>
         </div>
         <form id="register-form" class="ui large form {{#if isLoading}}loading{{/if}}">
@@ -13,29 +13,29 @@
             <div class="field">
               <div class="ui left icon input">
                 <i class="icon mail"></i>
-                <input type="email" id="account-email" placeholder="E-mail" />
+                <input type="email" id="account-email" placeholder="{{_ "email_address" }}" />
               </div>
             </div>
             <div class="field">
               <div class="ui left icon input">
                 <i class="icon lock"></i>
-                <input type="password" id="account-password" placeholder="Password" />
+                <input type="password" id="account-password" placeholder="{{_ "password" }}" />
               </div>
             </div>
             <div class="field">
               <div class="ui left icon input">
                 <i class="icon lock"></i>
-                <input type="password" id="confirm-password" placeholder="Confirm your password" />
+                <input type="password" id="confirm-password" placeholder="{{_ "confirm_password" }}" />
               </div>
             </div>
             <button type="submit" class="ui button large fuild">
-              Sign up
+              {{_ "sign_up" }}
             </button>
           </div>
         </form>
         <div class="ui message">
           You already have an account ?
-          <a href="/login">Sign in</a>
+          <a href="/login">{{_ "sign_in" }}</a>
         </div>
       </div>
     </div>
