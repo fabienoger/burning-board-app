@@ -1,10 +1,10 @@
 <template name="login">
   <div class="login row">
-    <div class="ui middle aligned center aligned grid">
+    <div class="ui center aligned grid">
       <div class="column">
         <div class="ui segment title">
           <h2 class="ui header">
-            Log-in to your account
+            {{_ "log_in_to_account" }}
           </h2>
         </div>
         <form id="login-form" class="ui large form {{#if isLoading}}loading{{/if}}">
@@ -13,23 +13,23 @@
             <div class="field">
               <div class="ui left icon input">
                 <i class="mail icon"></i>
-                <input type="email" class="" id="login-email" placeholder="E-mail" />
+                <input type="email" class="" id="login-email" placeholder="{{_ "email_address" }}" />
               </div>
             </div>
             <div class="field">
               <div class="ui left icon input">
                 <i class="lock icon"></i>
-                <input type="password" class="" id="login-password" placeholder="Password" />
+                <input type="password" class="" id="login-password" placeholder="{{_ "password" }}" />
               </div>
             </div>
             <button type="submit" class="ui button large fluid">
-              Login
+              {{_ "sign_in" }}
             </button>
           </div>
         </form>
         <div class="ui message">
-          New to us ?
-          <a href="/register">Sign Up</a>
+          {{_ "new_to_us" }}
+          <a href="/register">{{_ "sign_up" }}</a>
         </div>
       </div>
     </div>
