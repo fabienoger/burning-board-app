@@ -14,7 +14,7 @@ RUN mkdir /meteor
 
 WORKDIR /meteor
 
-CMD npm install
+CMD meteor npm install --save link-preview
 
 # launch app
 CMD meteor
